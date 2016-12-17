@@ -1,0 +1,382 @@
+<!-- Fastcommerce - EstiloProduto.htm : Grid v1 08.04.2016  (Ultra Light Store) -->
+
+<ProdTop>
+<!-- Search Filters -->
+<div id="idDivPath">
+  <div id="idHeadFilters">
+    <div id="idTxtFilters">Filtros da busca:</div>
+    <div id="idShowFilters"><button onclick="ToggleIDs('idHideFilters','idShowFilters');document.getElementById('ProductsFilterFC').style.display='block';">Exibir</button></div>
+    <div id="idHideFilters" style="display:none;"><button onclick="ToggleIDs('idShowFilters','idHideFilters');document.getElementById('ProductsFilterFC').style.display='none';">Ocultar</button></div>
+  </div>
+</div>
+<style>#ProductsFilterFC{display:none;margin-bottom:35px;}</style>
+
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6 text-left">
+      <div id="ProductsFilterFC" data-include-css="false"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Script Filters -->
+<script>
+  iQtdProds=<QtProd>;
+
+  if(iQtdProds=="1"){
+    var sPages=sF$.fnGetID("idPageCountFC");
+    if(sPages)sPages.style.display="none";
+  }
+  OffsetAutoPagFC=290;
+</script>
+
+<div id="idPagProdTop"></div>
+</ProdTop>
+
+<ProdLista>
+<!-- Prod Lista -->
+<FormProd>
+  <div class="DivListProd col-small-6 col-medium-6 col-large-6 col-mlarge-6 col-xlarge-6 text-center">
+    <div class="ListProductStyleProd">
+      <div class="DivListProductStyleImagemProd">
+        <div class="ImgCapaListProd DivListproductStyleImagemZoom"><ImagemProd></div>
+      </div>
+      <p class="ListProductStyleNomeProd"><a href="<URLProd>"><NomeProd></a></p>
+      <div class="DivListProductStylePrice">
+        <div class="DivListProductStylePriceProd" style="white-space:nowrap;">
+          <div id="idProdPrice<IDProduto>"><script>sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script></div> 
+          <div class="PriceAVistaLista"><script>sF$.fnShowParcels(<PrecoNum>,<MaxParcelasProdNum>);</script><br><script>sF$.fnMostraDescontoHome(<PrecoNum>);</script></div>
+        </div>
+      </div>
+      <div>
+        <script>if(<OpiniaoQtd>>0){document.write("<div class='RateProdHome'><table><tr><td><OpiniaoMedia></td><td></td></tr></table></div>");}else{document.write("<div class='RateProdHome'><table><tbody><tr><td><table cellspacing='0' cellpadding='0'><tbody><tr><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td></tr></tbody></table></td><td></td></tr></tbody></table></div>");}</script>      
+      </div>
+    </div>
+  </div>
+</FormProd>
+</ProdLista>
+
+
+<ProdDet>
+<!-- Prod Det -->
+<link href='<PathTo file="htm/css/fc_grid_v1.css">' rel="stylesheet">
+<link rel="stylesheet" href="/js/magictoolbox/magiczoomplusv1/magiczoomplus.css?cccfc=1" />
+
+<!-- Begin: Breadcrumb -->
+<div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6">
+  <div id="idBreadcrumb">
+    <ul>
+      <li><a href="/categorias.asp?idloja=<IDLoja>" class="ProductStyleBreadCrumblinkFC"><LegendaCat>:</a></li>
+      <li><PathCat></li>
+    </ul>
+  </div>
+</div>
+<!-- End: Breadcrumb -->
+
+<!-- Begin: Release Button and Review -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-right">
+      <div class="DivDetBtnRelease"><lancamento></div>
+      <div id="RateProd<IDProduto>" class='RateProdHome'></div>
+      <script>sF$.reviewProd(<IDProduto>,<OpiniaoQtd>,'<OpiniaoMedia>');</script>
+    </div>
+  </div>
+</div>
+<!-- End: Release Button and Review -->
+
+<!-- Begin: Product Name -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
+      <h1 id="idNameProductGridFC"><NomeProd></h1>
+    </div>
+  </div>
+</div>
+<!-- End: Product Name -->
+
+<!-- Begin: Product Image -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left" id="idDivGridImg">
+      <a href="<ImagemProdAmp>" class="MagicZoomPlus" rel="hint:false;initialize-on: mouseover;"><img src="<ImagemProdDet>" alt="<NomeProd>" onError="MostraImgOnError(this,0)"></a>
+    </div>
+  </div>
+</div>
+<!-- End: Product Image -->
+
+<!-- Begin: Product Ref -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
+      <div class="DivDetRef"><span class="prod-info">Ref: <small id="idCodProdGrid"><CodProd></small></div>
+    </div>
+  </div>
+</div>
+<!-- End: Product Ref -->
+
+<!-- Begin: Product Cat -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
+       <div class="prod-info DivDetCat">Categoria: <NomeCat></div>
+    </div>
+  </div>
+</div>
+<!-- End: Product Cat -->
+
+<!-- Begin: Product Price -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left ProductStyleDetprice">
+       <p class="prod-price" id="idPriceGridFC">
+         <PrecoSimples>     
+       </p>
+       <script>(function(){ var e=document.getElementById("idPriceGridFC"); if(e)e.innerHTML += fnMaxInstallmentsGrid(<PrecoNum>,<MaxParcelasProdNum>) + fnShowEconomyGrid(<PrecoNum>,<PrecoOri>); })(); </script>
+         <p id="idPriceAVista"><script>sF$.fnMostraDescontoProdDet(<PrecoNum>);</script></p>
+    </div>
+  </div>
+</div>
+<!-- End: Product Price -->
+
+<!-- Begin: Product Grid Content -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
+      <div class="FCGridMain" id="idMainGridFC_<IDProduto>"></div>
+    </div>
+  </div>
+</div>
+<!-- End: Product Grid Content -->
+
+<!-- Begin: line -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+      <hr>
+    </div>
+  </div>
+</div>
+<!-- End: line -->
+
+<!-- Begin: Product ZipCode -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
+      <div id="ShowCEP<IDProduto>"></div>
+    </div>
+  </div>
+</div>
+<!-- End: Product ZipCode -->
+
+<!-- Begin: line -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+      <hr>
+    </div>
+  </div>
+</div>
+<!-- End: line -->
+
+<!-- Begin: Product Share -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
+     <div class="SocialProdLinks">
+       <ul class="ProductStyleULFC ProductStyleSocialIcons" id="idShareProd">
+         <li style="white-space:nowrap;"><span><a href="javascript:MostraIndique(<IDLoja>,<IDProduto>)"><img src='<PathTo file="images/iconprodemail.svg">' class="EstImgShareProdMail" border="0" alt="E-mail" title="Recomende este produto"></a></span></li>
+         <li><span><ShareGooglePlus></span></li>
+         <li><span><ShareFacebook></span></li>
+         <li><span><ShareTwitter></span></li>
+         <li><span><SharePinterest></span></li>
+       </ul>
+     </div>
+    </div>
+  </div>
+</div>
+<!-- End: Product Share -->
+
+<div class="FullDoubleSpaceFC"></div>
+
+<!-- Begin: Buy Together -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-center">
+      <h2 class="GlobalTitleSepBG GlobalTitleSepDoubleLine"><span class="GlobalTitleSizeSep">COMPRE JUNTO!</span></h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="MainContainer">
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
+        <div class="ProductStyleBoxDescriptionFC">
+         <BuyTogether>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- End: Buy Together -->
+
+<div class="FullDoubleSpaceFC"></div>
+
+<!-- Begin: Description -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-center">
+      <h2 class="GlobalTitleSepBG GlobalTitleSepDoubleLine"><span class="GlobalTitleSizeSep">DESCRIÇÃO</span></h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="MainContainer">
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left descr-prod">
+        <div class="ProductStyleBoxDescriptionFC">
+         <Descricao>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <DescrHTM>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <DescrURL>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC ProductStyleVideoFC">
+         <VideoProd>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <BarCode>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- End: Description -->
+
+<div class="FullDoubleSpaceFC"></div>
+
+<!-- Begin: CrossSelling -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-center">
+      <h2 class="GlobalTitleSepBG GlobalTitleSepDoubleLine"><span class="GlobalTitleSizeSep">RECOMENDAMOS</span></h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="MainContainer">
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left descr-prod">
+        <div class="ProductStyleBoxDescriptionFC">
+         <CrossSelling>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- End: CrossSelling -->
+
+<div class="FullDoubleSpaceFC"></div>
+
+<!-- Begin: Reviews -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-center">
+      <h2 class="GlobalTitleSepBG GlobalTitleSepDoubleLine"><span class="GlobalTitleSizeSep">AVALIAÇÕES</span></h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="MainContainer">
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left descr-prod">
+        <div class="ProductStyleBoxDescriptionFC">
+         <Comments>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- End: Reviews -->
+
+<div class="FullDoubleSpaceFC"></div>
+
+<!-- Javascript ZipCode - Description CrossSelling -->
+<script>
+FCLib$.onReady(sF$.fnCustomizeIconsSocialNetworks(true));
+
+jQuery(".EstNameProdCross").addClass('text-overflow');
+</script>
+
+<!-- Begin: JS scripts grid -->
+<script src="/js/magictoolbox/magiczoomplusv1/magiczoomplus.js?cccfc=1"></script>
+<script src='<PathTo file="htm/js/fc_grid_v1.js">'></script>
+
+<script>
+fnShowCEPGrid(<IDProduto>); /*FC simulação de frete */
+FCGrid$.fnMultipleZoom("<ImagemProdDet>","<ImagemProdAmp>", false);
+</script>
+
+<script>
+var aProductOnlyOneGrid=[], aProductListGrid=[];
+
+/* Begin: produto principal */
+var sCor= ("<CorVal>" !="") ? "<CorVal>|<CorRGB>":"";
+aProductOnlyOneGrid.push(JSON.stringify({IDProduto: <IDProduto>,codProd: "<CodProd>", cor: sCor, estoque: <Estoque>, peso: "<PesoNum>", priceOri: "<PrecoOri>", priceNum: "<PrecoNum>", maxInstallmentsNum: <MaxParcelasProdNum>, adicional1: "<Adicional1Val>", adicional2: "<Adicional2Val>", adicional3: "<Adicional3Val>", adicionalD1: "<AdicionalD1Val>", adicionalD2:"<AdicionalD2Val>", adicionalD3:"<AdicionalD3Val>", imgDet:"<ImagemProdDet>", imgAmp:"<ImagemProdAmp>"}));
+/* End: produto principal */
+
+/* Begin: lista subprodutos */
+<sub>
+var sCor= ("<CorVal>" !="") ? "<CorVal>|<CorRGB>":"";
+aProductListGrid.push(JSON.stringify({IDProduto: <IDProduto>, codProd: "<CodProd>", cor: sCor, estoque: <Estoque>, peso: "<PesoNum>", priceOri: "<PrecoOri>", priceNum: "<PrecoNum>", maxInstallmentsNum: <MaxParcelasProdNum>, adicional1: "<Adicional1Val>", adicional2: "<Adicional2Val>", adicional3: "<Adicional3Val>", adicionalD1: "<AdicionalD1Val>", adicionalD2:"<AdicionalD2Val>", adicionalD3:"<AdicionalD3Val>", imgDet:"<ImagemProdDet>", imgAmp:"<ImagemProdAmp>"}));
+</sub>
+/* Begin: lista subprodutos */
+
+/* código opcional para alterar as configurações da grade:begin */
+FCGrid$.myOptions = {
+  autoSelect : false,
+  cartOnPage : true,
+  shippingUpdate : false,
+  incMultGrid : false,
+  separadorRGBCor : '|',
+  qtyDescriptors : 7,
+  htmlFlagChecked : '<i class="FCCheckedGrid"></i>',
+  imageProduct : 'cor',
+  colorName : false,
+  colorImg : false, 
+  colorImgFormat : '.gif',
+  stock: false,
+  btnSelectImg : 'botselecionegrid.svg', 
+  btnBuyImg : 'botcarrinho.svg',
+  btnContactUSImg : 'botconsultegrid.svg',
+  btnSoldOut : 'botcarrinhoesgotado.svg', 
+  textGrid : 'Selecione as opções abaixo',
+  order : ['cor', 'adicional1', 'adicional2', 'adicional3', 'adicionalD1', 'adicionalD2', 'adicionalD3'],
+  nameDescriptor : { 
+    cor : 'Cor',
+    adicional1 : 'Descritor 1',
+    adicional2 : 'Descritor 2',
+    adicional3 : 'Descritor 3',
+    adicionalD1 : 'Descritor 4',
+    adicionalD2 : 'Descritor 5',
+    adicionalD3 : 'Descritor 6'
+  },
+  textDescriptor : {
+    cor : 'Selecione',
+    adicional1 : 'Selecione',
+    adicional2 : 'Selecione',
+    adicional3 : 'Selecione',
+    adicionalD1 : 'Selecione',
+    adicionalD2 : 'Selecione',
+    adicionalD3 : 'Selecione'
+  }
+};
+/* código opcional para alterar as configurações da grade:end */
+
+FCGrid$.init("idMainGridFC_<IDProduto>", aProductListGrid, aProductOnlyOneGrid); /* Inicia a grade */
+
+</script>
+<!-- End: JS scripts grid -->
+</ProdDet>
+
+<ProdAmp><!-- Prod Amp --></ProdAmp>
+<ProdBottom>
+<script>
+  try{document.getElementById("idFoundFC").style.padding='0px 0px 15px 10px';}catch(e){}
+  try{document.getElementById("idPageCountFC").style.padding='0px 0px 15px 0px';}catch(e){}
+</script>
+</ProdBottom>
