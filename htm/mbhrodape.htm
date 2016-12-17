@@ -1,0 +1,166 @@
+  </div>
+</div>
+<!-- End Aside BarraEsquerda.htm - Open BarraTopo.htm - Don't remove -->
+
+<div class="row FullDoubleSpaceFC"></div>
+
+<!-- Begin: Newsletter -->
+<div class="FooterNewsletter">
+  <div class="row">
+    <div class="MainContainer">
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-left">
+	<tag-FCFooterNewsletterText>
+      </div>
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-left FooterNewsletterForm">
+	<tag-FCMbhFooterNewsletterInput>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End: Newsletter -->
+
+<!-- Begin: Menus -->
+<div class="FooterMainBarFC">
+  <div class="row">
+    <div class="MainContainer">
+      <!-- Begin Menu Products -->
+      <div class="col-small-6 col-medium-6 col-large-6 col-xlarge-6 col-full-6 text-left">
+        <div class="FooterBorderTitH3">
+          <tag-FCFooterProductsTitle>
+        </div>
+        <ul class="FooterULMenuFC">
+	  <li><tag-FCFooterProductsMenu1></li>
+	  <li><tag-FCFooterProductsMenu2></li>
+	  <li><tag-FCFooterProductsMenu3></li>
+	  <li><tag-FCFooterProductsMenu4></li>
+	  <li><tag-FCFooterProductsMenu5></li>
+        </ul>
+      </div>
+      <!-- End Menu Products -->
+      <!-- Begin Menu Account -->
+      <div class="col-small-6 col-medium-6 col-large-6 col-xlarge-6 col-full-6 text-left">
+        <div class="FooterBorderTitH3">
+	  <tag-FCFooterAccountTitle>
+        </div>
+        <ul class="FooterULMenuFC">
+	  <li><tag-FCFooterAccountMenu1></li>
+	  <li><tag-FCFooterAccountMenu2></li>
+	  <li><tag-FCFooterAccountMenu3></li>
+	  <li><tag-FCFooterAccountMenu4></li>
+	  <li><tag-FCFooterAccountMenu5></li>
+	  <li><tag-FCFooterAccountMenu6></li>
+        </ul>
+      </div>
+      <!-- End Menu Account -->
+    </div>
+  </div>
+</div>
+<!-- End: Menu, Newsletter and Address -->
+
+<!-- Begin: Menus -->
+<div class="FooterCompanyBar">
+  <div class="row">
+    <div class="MainContainer">
+      <!-- Begin About us -->
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-center">
+        <span class="FooterCompanyTxtFC"><CompanyName></span> <span class="FooterCompanyTxtFC">CNPJ <CompanyDocument></span>
+      </div>
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-center">
+        <span class="FooterCompanyTxtFC"><CompanyAddress></span>
+      </div>
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-center">
+        <span class="FooterCompanyTxtFC"><CompanyPhone></span>
+      </div>
+      <!-- End About us  -->
+    </div>
+  </div>
+</div>
+<!-- End: Menu, Newsletter and Address -->
+
+<!-- Begin: Menus -->
+<div class="FooterMainBarPaymentsFC">
+  <div class="row">
+    <div class="MainContainer">
+      <!-- Begin Menu Products -->
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-center">
+        <tag-FCFooterIconPayment1>&nbsp;<tag-FCFooterIconPayment2>&nbsp;<tag-FCFooterIconPayment3>&nbsp;<tag-FCFooterIconPayment4>
+      </div>
+      <!-- End Menu Products -->
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-center">
+        <tag-FCFooterCopyright>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End: Menu, Newsletter and Address -->
+
+<!-- Includes CSS -->
+<link rel="stylesheet" href="/wave/v3/wavemin.css?cccfc=1">
+<script>FCLib$.loadAsyncCSS('<PathTo file="htm/css/jquery_ui.css">');</script>
+<link rel="stylesheet" href='<PathTo file="htm/css/owlcarousel.css">'>
+<!--[if IE]><style type="text/css">.ui-autocomplete-category{margin-top: -2px}</style><![endif]-->
+
+<!-- Includes Javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src='<PathTo file="htm/js/autosuggest.js">'></script>
+<script src='<PathTo file="htm/js/mbhmobilemenu.js">'></script>
+<script src='<PathTo file="htm/js/owlcarouselmin.js">'></script>
+
+<!-- Progress Bar -->
+<link rel="stylesheet" href="<PathTo file="htm/css/nprogress.css">">
+<script src="<PathTo file="htm/js/nprogress.js">"></script>
+
+<script>
+var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+  showLeftPush = document.getElementById( 'showLeftPush' ),
+  showLeftPush2 = document.getElementById( 'showLeftPush2' ),
+  body = document.body;
+
+showLeftPush.onclick = function() {
+  classie.toggle( this, 'active' );
+  classie.toggle( body, 'cbp-spmenu-push-toright' );
+  classie.toggle( menuLeft, 'cbp-spmenu-open' );
+  disableOther( 'showLeftPush' );
+};
+
+showLeftPush2.onclick = function() {
+  classie.toggle( this, 'active' );
+  classie.toggle( body, 'cbp-spmenu-push-toright' );
+  classie.toggle( menuLeft, 'cbp-spmenu-open' );
+  disableOther( 'showLeftPush2' );
+};
+
+function disableOther( button ) {
+  if( div !== 'showLeftPush' ) {
+    classie.toggle( showLeftPush, 'disabled' );
+  }
+  if( div !== 'showLeftPush2' ) {
+    classie.toggle( showLeftPush2, 'disabled' );
+  }
+}
+
+
+jQuery(document).ready(function($) {
+  $('.loop').owlCarousel({
+    center: true,
+    items:2,
+    loop:true,
+    margin:10,
+    responsive:{
+        600:{
+            items:4
+        }
+    }
+  });
+  
+  $('.loop img').each(function(){
+  	var oImg = $(this).attr("data-src");
+  	if(oImg != null){
+  		$(this).attr("src", oImg);
+  	}
+  });
+  
+});
+fnFooter();
+fnProgressBarLoading();
+</script>
