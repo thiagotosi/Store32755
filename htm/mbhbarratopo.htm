@@ -1,0 +1,62 @@
+<!-- Includes Javascript -->
+<script src='<PathTo file="htm/jurosparcelas.js">'></script>
+<script src='<PathTo file="htm/mbhlojalib.js">'></script>
+
+<script>
+if(FC$.Page=="Checkout"){
+  FCLib$.loadAsyncCSS('<PathTo file="htm/checkout.css">');
+}
+</script>
+
+<!-- Begin Header Show and Close Menu -->
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left HeaderMobileMenuClose" id="cbp-spmenu-s1">
+  <div id="showLeftPush2"><img src="<PathTo file="images/mbhiconmenuclose.svg">"></div>
+  <ListPathCat out="12">
+</nav>
+<!-- End Header Show and Close Menu -->
+
+<div class="HeaderPedBackground"></div>
+<div class="row FullSpaceFC">
+  <div class="MainContainer">
+    <!-- Begin Header Menu -->
+    <div class="col-small-2 col-medium-2 col-large-2 col-mlarge-2 col-xlarge-2 HeaderMobileMenuSlider">
+      <div id="showLeftPush"><img src="<PathTo file="images/mbhiconmenuopen.svg">"></div>
+    </div>
+    <!-- End Header Menu -->
+    <!-- Begin Header Logo -->
+    <div class="col-small-8 col-medium-8 col-large-8 col-mlarge-8 col-xlarge-8">
+      <tag-FCHeaderLogo>
+    </div>
+    <!-- End Header Logo -->
+    <!-- Begin Header Cart -->
+    <div class="col-small-2 col-medium-2 col-large-2 col-mlarge-2 col-xlarge-2 HeaderBasket">
+      <tag-FCMbhHeaderCart>
+    </div>
+    <!-- End Header Cart -->
+  </div>
+</div>
+
+<!-- Begin Search -->
+<div class="row HeaderSearchField">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-mlarge-12 col-xlarge-12">
+      <tag-FCHeaderSearch>
+    </div>
+  </div>
+</div>
+<!-- End Search -->
+
+<!-- Begin Social Login -->
+<div class="row" style="white-space:nowrap;">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-mlarge-12 col-xlarge-12 HeaderSocialLoginContainer">
+      <tag-FCMbhHeaderLoginMobile>
+      <span id="idImgGlobalSignFC"></span>
+    </div>
+  </div>
+</div>
+<!-- End Social Login -->
+
+<!-- Begin Aside BarraEsquerda.htm - Close Rodape.htm - Don't remove -->
+<div class="MainContainer">
+  <div class="row">
