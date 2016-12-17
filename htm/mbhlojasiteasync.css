@@ -1,0 +1,231 @@
+/* Fastcommerce - Mobile Ultra Light Store Async - Agosto/2016 (v1) */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+ 
+/* Footer */
+.FooterNewsletter{background-color:<tag-FCCSSMainColor>;width:100%;height:150px;}
+.FooterNewsletter h2{margin:15px 0px 0px 0px;color:<tag-FCCSSColor3>;font-size:1.5em;text-align:center;}
+.FooterNewsletter h3{margin:10px 0px 0px 0px;color:<tag-FCCSSColor3>;font-size:0.9em;}
+.FooterNewsletter h4{margin:10px 0px 8px 0px;color:<tag-FCCSSColor3>;font-size:1em;font-family:'Roboto',verdana,arial;font-weight:300;}
+.FooterNewsletterForm{margin:10px 0px 0px 0px !important;}
+span .FooterNewsletterInput{height:50px;font-size:1em;border:1px solid <tag-FCCSSBorderColor> !important;padding:0 0 0 0px;width:85%;opacity:0.9;font-size:1.5em;font-style:italic;border-radius:5px;}
+.FooterInputBtnPosition{margin:0px 0px 0px -15px;}
+.FooterMainBarFC .row{padding:40px 0 30px 0;clear:both;}
+.FooterMainBarFC .row ul{font-family:'Roboto',verdana,arial;font-weight:400;}
+.FooterMainBarFC .row ul li{list-style:none;text-align:left;padding:6px 0 6px 0;}
+.FooterMainBarFC .row ul li a{color:<tag-FCCSSColor5>;font-size:1.1em;}
+.FooterMainBarFC .row ul li a:hover{color:<tag-FCCSSColor6>}
+.FooterBorderTitH3{border-bottom:1.5px solid <tag-FCCSSMainColor>;width:150px;margin:0px 0px 8px 0px}
+.FooterTitH3{font-size:1.5em;margin:0px 0px 5px 0px;color:<tag-FCCSSMainColor>}
+.FooterCompanyBar{background-color:#f4f4f4;width:100%;padding:10px 0 10px 0;margin:50px 0px 0px 0px;}
+.FooterCompanyTxtFC{margin:0 0 0 8px;color:#9e9e9e;font-family:'Roboto',verdana,arial;font-weight:400;font-size:0.8em;}
+.CompanyAddressLine1{margin:0 0 0 0px}
+.CompanyAddressLine2{margin:0px 0 0 5px;}
+.FooterMainBarPaymentsFC .row{padding:15px 0 30px 0;clear:both;}
+.FooterTecFastCommerce{font-size:0.8em;margin:0px 0px 10px 0px;color:#9e9e9e;font-family:'Roboto',verdana,arial;font-weight:400;}
+.FooterTecFastCommerce a{color:#9e9e9e;}
+
+/* Review */
+.RateProdHome{width:100%;min-height:25px;margin:20px 0 0 0px;clear:both;}
+.NotaOpiniaoVazio{width:15px;height:15px;background:url('<PathTo file="images/notaoff.png">') !important;}
+.NotaOpiniaoMeio{width:15px;height:15px;background:url('<PathTo file="images/notahalf.png">') !important;}
+.NotaOpiniaoCheio{width:15px;height:15px;background:url('<PathTo file="images/notaon.png">') !important;}
+#idEstLinhaProdOpFC{display:none}
+#EstCommentsTxt{font-family:'Roboto',verdana,arial;font-weight:700;position:relative;left:-3px;}
+#idEstNoCommentsClickProdOpFC a{font-family:'Roboto',verdana,arial;font-weight:700;}
+#idRateProdInfoFC .EstNomeProd a{font-family:'Roboto',verdana,arial;font-weight:700;font-size:1.5em;color:<tag-FCCSSPrincipalTxtColor>;}
+#idRateProdInfoFC .EstRefProd .EstRateRefProd{font-family:'Roboto',verdana,arial;font-weight:300;font-size:0.8em;margin:5px 0px 5px 0px}
+#idRateProdInfoFC .EstRefProd .EstRateCatProd{font-family:'Roboto',verdana,arial;font-weight:400;font-size:1em;}
+.EstPoliticaOpiniao{margin:10px 0 50px 0;}
+.EstPoliticaOpiniao a{font-family:'Roboto',verdana,arial;font-weight:700;}
+#FCFormContainer .FCRateClientInfo{line-height:20px;}
+#FCFormContainer .FCRatePermissionEmail{font-family:'Roboto',verdana,arial;font-weight:400;font-size:0.9em;}
+#FCFormContainer .FCRatePermissionEmail label{position:relative;top:2px;}
+.EstOpiniaoLocal{font-family:'Roboto',verdana,arial;font-weight:300;font-size:0.9em;}
+.EstOpiniaoTexto{font-family:'Roboto',verdana,arial;font-weight:300;font-size:1em;}
+.FCRateProd td{vertical-align:middle;}
+.RateProd{float:right;margin:5px 0 20px 0;}
+
+/* MagicZoom - EstiloProduto.htm */
+#idDivGridImg .MagicZoomPlus{border:1px solid <tag-FCCSSBorderColor>;}
+#idDivGridImg .ZoomIMG2{border:1px solid <tag-FCCSSBorderColor>;}
+
+/* Buy Together - EstiloProduto.htm */
+.ProductDet .bTText{display:none}
+.ProductDet .bTPriceProd .FCPrice .FCCurrencyLabel{font-size:0.7em;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSPriceColor>}
+.ProductDet .bTPriceProd .FCPrice .FCPriceInt{font-size:1em;font-family:'Roboto',verdana,arial;font-weight:700;color:<tag-FCCSSPriceColor>}
+.ProductDet .bTPriceProd .FCPrice .FCPriceCent{font-size:0.9em;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSPriceColor>}
+.ProductDet .bTPriceProd strike .FCPrice .FCCurrencyLabel{font-size:0.7em;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSPriceStrikeColor>}
+.ProductDet .bTPriceProd strike .FCPrice .FCPriceInt{font-size:1em;font-family:'Roboto',verdana,arial;font-weight:700;color:<tag-FCCSSPriceStrikeColor>}
+.ProductDet .bTPriceProd strike .FCPrice .FCPriceCent{font-size:0.9em;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSPriceStrikeColor>}
+.ProductDet .bTPriceProd .bTTotalsPrices .bTTotalBuy #PricesCJ .bTProdPrice strike{color:<tag-FCCSSPriceStrikeColor> !important}
+.ProductDet #bTContainer .bTTotalsPrices .bTTotalBuy #PricesCJ #idProdPrice strike{color:<tag-FCCSSPriceStrikeColor> !important;}
+
+/* ProdDet SocialLinks */
+.SocialProdLinks{max-width:100%;min-height:30px;margin:0 0 0 0;}
+.FooterSocialIcons{margin:initial !important;max-width:150px;}
+a .EstImgShareProdMail{width:40px !important;height:40px !important;}
+a .EstImgShareGooglePlus{width:40px !important;height:40px !important;}
+a .EstImgShareFacebook{width:40px !important;height:40px !important;margin:6px 0px 0px 0px;}
+a .EstImgShareTwitter{width:40px !important;height:40px !important;}
+a .EstImgSharePinterest{width:40px !important;height:40px !important;}
+
+/* CrossSelling - EstiloProduto.htm */
+#idTitProdCrossFC{display:none;}
+.DivCrossSelling{width:100%;float:left;margin-top:30px;border-top:1px solid <tag-FCCSSBorderColor>}
+#idTitProdCrossFC{color:<tag-FCCSSColor1>;font-size:1.2em;font-weight:bold; margin:10px 0 10px 10px;text-align:left;color:<tag-FCCSSColor1>;}
+#idProdCrossFC {margin:0;width:100%;background-color:<tag-FCCSSColor3>;}
+#idProdCrossFC ul li{display:inline-block;float:left;padding:12px;margin:0px 0px 0px 5px;}
+#idListProdCrossFC{overflow:hidden;height:238px;position:relative;}
+#idListProdCrossFC li{margin:0 5px 0 5px;width:19.5%;min-width:150px;height:228px;border:1px solid <tag-FCCSSBorderColor>;border-radius:3px;}
+#idProdCrossFC li{list-style-type:none;margin:0;padding:0 0 0 0;}
+.EstImageProdCross{text-align:center;margin:5px;height:59%;background-color:<tag-FCCSSColor3>;border:0 solid <tag-FCCSSBorderColor>;}
+.EstImageProdCross img{height:100%}
+.EstCatProdCross{text-align:center;margin:0 0 5px 0;font-size:12px;font-family:'Roboto',Arial;font-weight:400;line-height:17px;color:<tag-FCCSSColor4>;display:none;}
+.EstRefProdCross{display:block;font-family:'Roboto',Arial;font-weight:300;color:<tag-FCCSSColor4>;}
+.EstNameProdCross{font-size:12px;line-height:17px;margin-bottom:5px;display:block;height:54px;font-family:'Roboto',Arial;font-weight:700;text-align:center;}
+.EstNameProdCross a{display:block;height:36px;overflow:hidden;color:<tag-FCCSSPrincipalTxtColor>;}
+.EstPriceProdCross{text-align:center;margin:0 0 8px 0;font-size:14px;font-family:'Roboto',Arial;font-weight:700;background-color:<tag-FCCSSColor3>;border:0 solid <tag-FCCSSBorderColor>;color:<tag-FCCSSPriceColor>;}
+.EstDescrProdCross{display:none;font-size:10px;text-align:center;margin:100px 0 0 0;display:block;cursor:pointer !important;border:0 solid <tag-FCCSSBorderColor>;color:<tag-FCCSSColor15>;}
+.EstDescrProdCross span{display:none;overflow:hidden;height:33px;display:block;}
+#EstCommentsTxt{font-size:18px;padding:9px 0;text-align:left;height:30px;display:block;margin:0 0 5px 0;background:<tag-FCCSSColor3>;color:<tag-FCCSSColor1>;}
+
+/* Text Arrows VER MAIS */
+.BotVerMais{font-size:12px;font-family:'Roboto',verdana,arial;font-weight:400;text-decoration:none;font-size:14px;color:<tag-FCCSSColor4>;}
+.BotVerMais:hover{text-decoration:underline;color:<tag-FCCSSColor3>;}
+.BotVerMais:hover .TxtBotVerMais{color:<tag-FCCSSColor3>;}
+#idImgBotPreviousPageFC, #idImgBotNextPageFC{display:none}
+
+/* Style Product Order */
+.EstTabPedidoTit{font-size:8pt;font-weight:bold;background:#dfdfdf;color:#000000;}
+.EstTabPedidoNome{font-size:8pt;font-weight:bold;color:#333333;}
+.EstTabPedidoNome:visited{color:#333333}
+.EstTabPedidoNome:hover{color:#990000}
+.EstTabPedido{font-size:8pt;background:#f4f4f4}
+.EstTabPedidoNum{font-size:8pt;background:#f4f4f4;}
+.EstTabPedidoTotal{font-size:8pt;font-weight:bold;background:#efefef;}
+.EstTabPedidoFrete{font-size:8pt;font-weight:bold;background:#F4F4F4;}
+.EstTabPedidoBot{font-size:8pt;font-weight:bold;color:#000000;}
+.EstTabPedidoRef{font-size:8pt;color:#000000;line-height: 25px;}
+.EstTabPedidoAdicNome{font-size:8pt;}
+.EstTabPedidoAdicItem{font-size:8pt;font-weight:bold}
+.EstTextoQtd{font-size:8pt;text-align:right}
+.EstContinuarComprando{font-size:9pt;font-weight:bold;color:#990000}
+.FreightContainerFC{margin: 30px 0 !important;}
+.EstTabPedido .EstFotoProdCesta{border:1px solid <tag-FCCSSBorderColor>;}
+.FreightTxtOnlyBR{float:left;clear:both;text-align:center;margin-top:7px;max-width:254px;padding:7px 5px;background:#0E72D2;color:#ffffff;font-weight:bold;font-size:0.75em;vertical-align:middle;line-height:18px;}
+.FreightTxtOnlyBR img{vertical-align:middle;margin-right:5px;}
+
+/* Style CADASTRO DE CLIENTES, AJUDA, CONFIRMAÇÃO DO PEDIDO */
+.EstTabTopo{padding:5px 2px 5px 2px;font-size:12px;font-weight:bold}
+.FCRegister .EstTabTopo{padding:10px 0 10px 0;font-size:16px;background:#dedede;}
+.FCRegister #idTabRequiredFieldFC{display:none;}
+.FCRegister #idTabRegisterFC select{min-height:27px;border:1px solid #cacaca;}
+.FCRegister #idTabRegisterFC #P2Estado{width:45px !important;}
+.FCRegister #idTabRegisterFC input[type='text'], .FCRegister #idTabRegisterFC input[type='password']{padding:0 10px !important;min-height:27px !important;border:1px solid #cacaca;}
+.FCRegister #idTabRegisterFC td table{border-spacing: 0 !important;}
+.FCRegister #idTabRegisterFC td{padding: 5px 0;}
+#idCalendNascFC img{margin: 0 3px;}
+.FCHelp p{line-height:20px;}
+.FCHelp #idHelpFC .EstTabTopo{font-size:1.5em;margin:20px 0px 10px -13px;background-color:<tag-FCCSSBorderColor>;padding:15px 0px 15px 0px}
+.FCHelp #idHelpFC .StyRatePolicies{font-family:'Roboto',verdana,arial;font-weight:400;line-height:20px;}
+.FCHelp #idHelpFC .StyRatePolicies{font-family:'Roboto',verdana,arial;font-weight:400;line-height:20px;}
+.FCRecommend #idTxtIntroRecommendFC{font-family:'Roboto',verdana,arial;font-weight:400;}
+.FCNewsletter #idTxtIntroNewsFC{font-family:'Roboto',verdana,arial;font-weight:400;}
+.FCNewsletter #idTxtOptNewsYesFC{font-family:'Roboto',verdana,arial;font-weight:400;position:relative;top:3px;}
+.FCNewsletter #idTxtOptNewsNoFC{font-family:'Roboto',verdana,arial;font-weight:400;font-size:0.8em;position:relative;top:2px;}
+
+/* My Account */
+.FCMyCheckout .FooterInfoBannersBG, .FCMyCheckout #idPageHistoryFC{display:none;}
+#FCMenuCli .FCMenuCliImgName .FCMenuCliName .FCMenuCliNameLabel{font-weight:bold;}
+.FCDivLastOrder1NumMyAcc{font-family:'Roboto',Arial,sans-serif;font-weight:700;background-color:#f6f5f5;padding:10px 10px 10px 5px;}
+.FCDivLastOrder1DateValMyAcc{font-weight:bold;}
+.FCDivOrdersList1NumMyAcc{font-family:'Roboto',Arial,sans-serif;font-weight:700;background-color:#f6f5f5;padding:10px 10px 10px 5px;}
+.FCDivOrdersList1DateValMyAcc{font-weight:bold;}
+.FCDivLastOrder2PaymentValMyAcc{font-weight:bold;}
+.FCDivLastOrder2ValMyAcc{color:#558b2f;font-size:1.5em;}
+.FCMyCheckout .FCCurrencyLabel{color:#558b2f;}
+#idTxtSit1MyAccOrderFC{font-size:0.9em;font-weight:bold;}
+.FCDivOrdersList2PaymentValMyAcc{font-weight:bold;}
+.FCDivOrdersList2ValMyAcc{color:#558b2f;font-size:1.5em;}
+.FCDivRating2EmailValMyAcc{font-size:0.9em;}
+.FCDivRating2DateValMyAcc{font-size:0.9em;font-weight:bold;}
+.FCMyAccount .buttonForm{text-transform:uppercase;font-weight:bold;font-size:2em;}
+.FCDivAddress1MyAcc{font-family:'Roboto',Arial,sans-serif;font-weight:700;background-color:#f6f5f5 !important;}
+.FCDivCards2DateValMyAcc{font-size:0.9em;font-weight:bold;}
+.FCDivProdAv2DateUntilValMyAcc{font-weight:bold;}
+.FCDivRegister1NomeMyAcc{font-family:'Roboto',Arial,sans-serif;font-weight:700;background-color:#f6f5f5;padding:10px 10px 10px 5px;}
+.FCDivCards1MyAcc{background-color:#f6f5f5 !important;}
+.FCDivCards1ImgMyAcc img{border:1px solid #eaeaea}
+.FCDivProdAv1ProdNameMyAcc{font-family:'Roboto',Arial,sans-serif;font-weight:700;background-color:#f6f5f5;padding:10px;}
+.FCDivRating1ProdNameMyAcc{font-family:'Roboto',Arial,sans-serif;font-weight:700;background-color:#f6f5f5;padding:10px;}
+#FCMyAccContentCards .FCMyAccContent .FCDivExtCardsMyAcc .buttonMyAcc{background:#e53935;}
+#FCMyAccContentAddress .FCMyAccContent .FCDivExtAddressMyAcc .buttonsMyAcc #idAddressDelete{background:#e53935;}
+#FCMyAccContentRating .FCMyAccContent .FCDivExtRatingMyAcc .buttonsMyAcc #idRatingDelete{background:#e53935;}
+#FCMyAccContentProdAv .FCMyAccContent .FCDivExtProdAvMyAcc .buttonsMyAcc #idProdAvDelete{background:#e53935;}
+.FCAddressMyAcc #idAccountMyAddressFC #FCMyAccContentAddress .buttonsAddAddressMyAcc #idRegisterAddress{background:#1e88e5;font-weight:bold;}
+.FCMyAccContent .FCDivExtLastOrderMyAcc .buttonsMyAcc #idSeeAllOrders{background:#1e88e5;}
+.FCMyAccContent .FCDivExtAccessMyAcc .buttonsMyAcc #idAccessPswEdit{background:#1e88e5;}
+.FCMyAccContent .FCDivExtOrdersListMyAcc .buttonsMyAcc #idSeeDetailTracking{background:#1e88e5;}
+#FCMyAccContentMyAddress, .FCDivAddress2MyAcc{font-size:0.9em;}
+
+/* Checkout passo a passo */
+.FCPayment #TabRadio .EstTabPedidoTit{font-size:18px;font-family:'Roboto',Arial,sans-serif;font-weight:400;}
+.FCPayment #TabRadio .EstTabPedido{font-size:18px;font-family:'Roboto',Arial,sans-serif;font-weight:400;}
+#idTabEnvioFC{padding:20px;margin:34px auto;}
+#idTabEnvioFC td{vertical-align:middle;padding:5px 5px;font-size:16px !important;font-family:'Roboto',Arial,sans-serif !important;font-weight:400;}
+#idTabEnvioFC input{font-size:16px !important;font-family:'Roboto',Arial,sans-serif !important;font-weight:400;}
+#idTabEnvioFC #idTDTxtEnvioFC{font-size:22px;font-family:'Roboto',Arial,sans-serif;font-weight:400;}
+#idTabEnvioFC #idInputCEPFC{font-size:22px;font-family:'Roboto',Arial,sans-serif;font-weight:400;width:130px !important;}
+#idTabBotPreviousNextFC {height:50px;padding:40px 0 40px 0;}
+#idTabBotPreviousNextFC #idTxtBotPreviousPageFC{text-align:center;width:80px;padding:15px 30px 15px 30px;cursor:pointer;font-size:16px;font-weight:normal;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;text-transform:uppercase;font-family:'Roboto',Arial,sans-serif;font-weight:400;background-color:#e4e5e5;color:#555555;}
+#idTabBotPreviousNextFC #idTxtBotPreviousPageFC:hover{text-decoration:none;}
+#idTabBotPreviousNextFC #idTxtBotNextPageFC{text-align:center;width:80px;padding:15px 30px 15px 30px;cursor:pointer;font-size:16px;font-weight:normal;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;text-transform:uppercase;font-family:'Roboto',Arial,sans-serif;font-weight:400;background-color:#44ac55;color:#ffffff;}
+#idTabBotPreviousNextFC #idTxtBotNextPageFC:hover{text-decoration:none;}
+#idTabBotPreviousNextFC #idPreviousPageFC a{text-decoration:none;}
+#idTabBotPreviousNextFC #idNextPageFC a{text-decoration:none;}
+#idTabBotPreviousNextFC #idImgBotPreviousPageFC{display:none;}
+#idTabBotPreviousNextFC #idImgBotNextPageFC{display:none;}
+.BotVerMais{cursor:hand;font-size:9pt;font-family:tahoma,verdana,arial;font-weight:bold;text-decoration:none;margin-top:12px;}
+.BotVerMais:hover{text-decoration:underline}
+
+/* Old Checkout */
+.FCFreight #idFCContent, .FCPayment #idFCContent, .OrderLogin #idFCContent, .OrderRegistration #idFCContent, .FCRegister #idFCContent, .OrderConfirmation #idFCContent, .OrderCompletion #idFCContent{margin:0px auto;width:85%;}
+#PassosCompra li{display:inline-block;padding:5px;font-size:12px;}
+.EstPassoCompraDiv{background-image:none !important;}
+.OrderRegistration .EstTabTopo, .OrderConfirmation .EstTabTopo, .OrderCompletion .EstTabTopo{padding:10px 0 10px 0;font-size:16px;}
+.OrderRegistration #idTabRegisterFC td{padding:5px 0;}
+.OrderRegistration #idTabRequiredFieldFC{display:none;}
+.OrderRegistration .EstTabTopo, .OrderConfirmation .EstTabTopo, .OrderCompletion .EstTabTopo{background:#dedede;}
+
+/* News */
+.FCNews #idMiddlePageFC #idCurrentPageFC{background-color:<tag-FCCSSMainColor> !important;}
+.FCNews #idMiddlePageFC a{color:<tag-FCCSSMainColor> !important;}
+.FCNews #idAllNewsFC .StyTitNews a{color:<tag-FCCSSMainColor> !important;font-size:1.5em;}
+.FCNews #idAllNewsFC .StyTitNews a:hover{text-decoration:underline;}
+.FCNews #idAllNewsFC #idTitNewsFC{color:<tag-FCCSSMainColor> !important;font-size:2em;}
+.FCNews #idAllNewsFC #idPaginationNewsFC a:hover .BotVerMais{color:<tag-FCCSSMainColor> !important;}
+.FCNews .StyTitNews{font-size:16px;line-height:30px;}
+.FCNews .smText{font-family:'Roboto',verdana,arial;font-weight:400;font-size:13px;line-height:22px;}
+.FCNews .LocalDateNewsList{font-size:12px;}
+.FCNews #idTitNewsFC{font-family:'Roboto',verdana,arial;font-weight:700;font-size:16px;line-height:30px;font-weight:normal}
+.FCNews #idSubTitNewsFC{font-family:'Roboto',verdana,arial;font-weight:400;font-weight:normal;font-size:14px;}
+.FCNews #idTextNewsFC{font-family:'Roboto',verdana,arial;font-weight:400;font-size:14px;}
+.FCNews #idTextArticleNewsFC{margin-top:20px;}
+.FCNews #idLocalDateNewsFC{font-size:12px;font-weight:normal;}
+#idSpanImgNewsFC{display:table;margin:0 auto;}
+#idSpanImgNewsFC img{max-width:100%;max-height:500px;}
+
+/* Button Ped Confirmação */
+.BotConfPed {border-width:1px;font-weight:bold;font-size:14px;font-family:'Roboto',Arial,sans-serif;font-weight:400;height:40px;width:300px;}
+.EstTextoContinuar{font-size:12pt;font-weight:bold;color:green;font-family:'Roboto',Arial,sans-serif;font-weight:400;}
+.BotContinuarConfirmacao{background-color:#6ea853;font-family:'Roboto',Arial,sans-serif;font-weight:700;border:none;padding:7px 15px 7px 15px;color:#ffffff;cursor:pointer;-webkit-border-radius:3px;min-height:47px;transition:background-color 0.5s;background-color:#44ac55;font-size:14px;}
+.BotContinuar{font-size:12pt;font-weight:bold;}
+
+/* Estilos dos retornos de transação */
+.StyTransactionID{color:#355590;}
+.StyTransactionUnderReview{color:#f47900;text-transform:uppercase;}
+.StyTransactionApproved{color:#06b545;text-transform:uppercase;}
+.StyTransactionDeclined{color:#db2c0f;text-transform:uppercase;}
+.StyTransactionNotCompleted{color:#983727;text-transform:uppercase;}
+.StyTransactionTxtPayment{font-size:0.8em;}
+.StyReturnPayment{margin-top:20px;background-color:#FFFCF0;padding:5px;border-width:2px;border-style:dashed;border-color:#dedede;text-align:center;border-radius:6px;-moz-border-radius:6px;-webkit-border-radius:6px;}
