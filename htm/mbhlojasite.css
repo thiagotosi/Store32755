@@ -1,0 +1,417 @@
+/* Fastcommerce - Mobile Ultra Light Store - Agosto/2016 (v1) */
+/* Global */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+p{font-size:12px;font-family:'Roboto',verdana,arial;font-weight:400;}
+a{text-decoration:none}
+a:hover{text-decoration:none}
+th{font-family:'Roboto',verdana,arial;font-weight:400;font-size:12px;background:#FFFFCC;color:#336699;}
+td{font-family:'Roboto',verdana,arial;font-weight:400;}
+img{border:0;}
+h1,h2,h3,h4,h5,h6{font-family:'Roboto',verdana,arial;font-weight:700;}
+.Titulos{font-family:'Roboto',Arial;font-weight:400;font-weight:bold;font-size:32px;text-decoration:none;line-height:66px;color:<tag-FCCSSPrincipalTxtColor>;}
+.smSelect{font-size:8pt;font-family:'Roboto',tahoma,verdana;font-weight:400;}
+.smText{font-size:12px;font-family:'Roboto',tahoma,verdana;font-weight:400;}
+.mnText{font-size:7pt;font-family:'Roboto',tahoma,verdana;font-weight:400;}
+.mdtxt{font-size:9pt;font-family:'Roboto',verdana,arial;font-weight:400;}
+.lgtxt{font-size:14px;font-weight:bold; text-decoration:none;color:<tag-FCCSSColor1>;}
+.TextoPequeno{font-size:7pt;font-family:'Roboto',tahoma,verdana;font-weight:400;}
+input, textarea{font-family:'Roboto',verdana,arial;font-weight:400;font-size:13px;color:<tag-FCCSSInputColor>;}
+input[type="text"],input[type="number"]{padding:5px;background-image:none;color:<tag-FCCSSInputColor>;border:1px solid <tag-FCCSSInputBorderColor>;}
+textarea,input[type="text"],input[type="button"],input[type="submit"]{-webkit-appearance:none;-webkit-border-radius:0;}
+.FullSpaceFC{margin-top:20px;}
+.FullDoubleSpaceFC{margin:7% 0px 0px 0px;}
+.FullTripleSpaceFC{margin:10% 0px 0px 0px;}
+h2.GlobalTitleSepBG{position:relative;z-index:1;&:before{border-top:2px solid <tag-FCCSSTitleTxtBorder>;content:"";margin:0 auto;position:absolute;top:50%;left:0;right:0;bottom:0;width:95%;z-index:-1;}span{background:<tag-FCCSSColor3>;padding:0 15px;}}
+h2.GlobalTitleSepBG span{background:<tag-FCCSSColor3> none repeat scroll 0 0;padding:0 15px;}
+h2 .GlobalTitleSizeSep{font-size:1.5em;}
+h2.GlobalTitleSepDoubleLine:before{border-top:none;}
+h2.GlobalTitleSepDoubleLine:after{border-bottom:1px solid <tag-FCCSSTitleTxtBorder>;-webkit-box-shadow:0 1px 0 0 <tag-FCCSSTitleTxtBorder>;-moz-box-shadow:0 1px 0 0 <tag-FCCSSTitleTxtBorder>;box-shadow:0 1px 0 0 <tag-FCCSSTitleTxtBorder>;content: "";margin:0 auto;position:absolute;top:45%;left:0;right:0;width:100%;z-index:-1;}
+.FCProduct #idTitPagFC{display:none;}
+.int{font-size:26px;font-family:'Roboto',verdana,arial;font-weight:700;}
+.dec{font-size:16px;font-family:'Roboto',verdana,arial;font-weight:700;}
+.descr-prod{margin:0 0 50px 0;}
+.currency{font-size:12px;font-family:'Roboto',verdana,arial;font-weight:700;}
+.currency strong{font-weight:normal;}
+.currency a{font-size:18px;line-height:45px;}
+.por{left:0;top:0px;text-decoration:none !important;}
+.old-price{font-family:'Roboto',verdana,arial;font-weight:700;display:block;line-height:normal;color:<tag-FCCSSColor2>;font-size:12px;margin-bottom:-12px;}
+.installments{clear:left;line-height:normal;font-size:12px;margin-top:0;font-family:'Roboto',verdana,arial;font-weight:400;}
+.ProdParcels .installments{clear:left;line-height:normal;font-size:15px;margin-top: 0;}
+.prices .price{font-family:'Roboto',verdana,arial;font-weight:700;margin:0 0 6px 0;display:block;}
+.prod-info{font-size:0.8em;font-family:'Roboto',verdana,arial;font-weight:400;}
+.prod-price b{font-family:'Roboto',verdana,arial;font-weight:700;}
+.FCAdvancedSearch #Buscar{font-family:'Roboto',verdana,arial;font-weight:700;text-transform: uppercase;font-size:1.2em;}
+.FCTrack #Enviar{font-family:'Roboto',verdana,arial;font-weight:700;text-transform: uppercase;font-size:1.2em;}
+.FCRegister #idTxtBotNextPageFC{font-family:'Roboto',verdana,arial !important;font-weight:700;text-transform: uppercase;font-size:1.2em !important;}
+.FCCheckout #idTxtLinkContinueFC{font-family:'Roboto',verdana,arial !important;font-weight:700;text-transform: uppercase;font-size:1.2em !important;}
+.FCRecommend #Enviar{font-family:'Roboto',verdana,arial !important;font-weight:700;text-transform: uppercase;font-size:1.2em !important;}
+.FCNewsletter #EnviarAssinante{font-family:'Roboto',verdana,arial !important;font-weight:700;text-transform: uppercase;font-size:1.2em !important;}
+.FCNews #Procurar{font-family:'Roboto',verdana,arial !important;font-weight:700;text-transform: uppercase;font-size:1.2em !important;}
+.FCNews #Todas{font-family:'Roboto',verdana,arial !important;font-weight:700;text-transform: uppercase;font-size:1.2em !important;}
+.FCContact #Enviar{font-family:'Roboto',verdana,arial !important;font-weight:700;text-transform: uppercase;font-size:1.2em !important;}
+.FCProductShare #Enviar{font-family:'Roboto',verdana,arial !important;font-weight:700;text-transform: uppercase;font-size:1.2em !important;}
+.FCProductAvailability #Enviar{font-family:'Roboto',verdana,arial !important;font-weight:700;text-transform: uppercase;font-size:1.2em !important;}
+#idBadgeAllFC img{display:none !important}
+.FCCart .FooterMainBarFC,.FCCart .FooterNewsletter,.FCCart .HeaderSearchField,.FCCheckout .FooterMainBarFC,.FCCheckout .FooterNewsletter,.FCCheckout .HeaderSearchField,.FCContact .FooterMainBarFC,.FCContact .FooterNewsletter,.FCContact .HeaderSearchField,.FCNewsletter .FooterMainBarFC,.FCNewsletter .FooterNewsletter,.FCNewsletter .HeaderSearchField,.FCRecommend .FooterMainBarFC,.FCRecommend .FooterNewsletter,.FCRecommend .HeaderSearchField,.FCRegister .FooterMainBarFC,.FCRegister .FooterNewsletter,.FCRegister .HeaderSearchField,.FCTrack .FooterMainBarFC,.FCTrack .FooterNewsletter,.FCTrack .HeaderSearchField{display:none}
+
+/* Background styles */
+.FundoSiteCentro{background:#FFFFFF;}.FundoTopoExt{background:#FFFFFF;}.FundoSiteInt{background:#FFFFFF;}
+
+/* Style Forms Buttons, Inputs and Text */
+.InputText {color:#545B8F;}
+
+/* Remove LeftBar of certain pages */
+.ProductDet .left-bar, .FCFreight .left-bar, .FCCheckoutSteps .left-bar, .FCPayment .left-bar, .FCContact .left-bar, .ProductDet #idDivPath, .ProductDet #idDivSearch, .ProductDet .Titulos,.ProductList .Titulos, .FCCart .left-bar,.FCRegister .left-bar, .FCNews .left-bar, .FCHelp .left-bar, .FCTrack .left-bar, .FCNewsletter .left-bar, .FCRecommend .left-bar, .FCAdvancedSearch .left-bar, .FCRateProd .left-bar{display:none !important;}
+.ProductList #idFCContent{text-align:left;}
+
+/* Register Tables */
+.FCRegister table{border-collapse:inherit !important;border-spacing:5px;}.FCRegister td{vertical-align:middle !important;}
+
+/* Track Tables */
+.FCTrack table{border-collapse:inherit !important;margin:auto;padding:5px !important;border-spacing:1px;}.FCTrack tr, .FCTrack  td, .FCTrack th{padding:6px !important;}
+
+/* NewsLetter */
+#idTxtAskNewsFC{display:block;margin:10px 0 15px 0;}
+
+/* Contato */
+.FCContact p{line-height:24px;}
+
+/*  Redir Pagamentos */
+#idTabRedirPagtoFC{background:#dedede;padding:1px;margin:0}
+#idTabRedirPagtoFC .EstTabTopo{padding:2px 2px 2px 2px;background:#f0f0f0;color:#0e3657;font-size:11pt;font-family:'Roboto',verdana,arial;font-weight:400;line-height:40px;}
+#idTabRedirPagtoFC .EstTabQuadro{background:#ffffff;font-size:8pt;font-family:'Roboto',verdana,arial;font-weight:400;}
+#idTabRedirPagtoFC .InputButton{background-color:#6ea853;color:#fcfcfc;font-weight:bold;font-size:12px;font-family:'Roboto',verdana,arial;font-weight:400;height:40px;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+#idTabRedirPagtoFC .InputButton:hover{background-color:#4c7738;border-radius:5px;color:#FCFCFC;font-family:'Roboto',verdana,arial;font-weight:400;font-size:12px;font-weight:bold;height:40px;cursor:pointer;}
+
+/* Style Forms Buttons, Inputs and Text */
+.InputText{border-width:1px;border-style:solid;font-size:11px;}.InputButton{border-width:1px;font-size:11px;}.EstTabPedidoTit, .EstTabPedidoNum, .EstTabPedidoTotal, .EstTabPedido{border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;}
+
+/* Style Buttons */
+.BotLancamento{font-size:7pt;font-family:'font-family:'Roboto',verdana,arial',verdana,arial;font-weight:400;}
+.BotComprar{display:none}
+.BotEsgotado{font-size:8pt;font-family:'Roboto',verdana,arial;font-weight:400;}
+.BotExcluir{font-size:8pt;font-family:'Roboto',verdana,arial;font-weight:400;}
+.BotMaisDetalhes {font-size:7pt;font-family:'Roboto',verdana,arial;font-weight:400;text-decoration:none}
+.BotCartProd text{font-family:'Roboto',verdana,arial;font-weight:700;font-size:18px}
+.BotCartProd:hover rect{transition:fill 0.4s;}
+.BotProdOut text{font-family:'Roboto',verdana,arial;font-weight:700;}
+.ProductStyleSocialIcons li{display:inline;}
+
+/* Style para a tabela de Busca Rápida, para tabela de Ajuda (Pagamentos) e Fale Conosco */
+.EstTabQuadro{font-size:8pt;background:#FFFFFF;}
+
+/* Style dos campos do formulário clientes,fale conosco,... */
+.EstNomeCampo{font-size:8pt;color:#000000;}
+.EstCampo{font-size:8pt;}
+#idTabRegisterFC .EstNomeCampo{width:250px;}
+#idTabRegisterFC{width:70%;margin-left:120px;margin-right:120px;}
+
+/* Style Required Fields  */ 
+#idLocalFC .EstNomeCampo{color:#FF0000;}#idParaFC .EstNomeCampo{color:#FF0000;}#idPEmailFC .EstNomeCampo{color:#FF0000;}#idPEnderecoFC .EstNomeCampo{color:#FF0000;}#idtrPEnderecoNumFC .EstNomeCampo{color:#FF0000;}#idtrPEnderecoComplFC .EstNomeCampo{color:#FF0000;}#idPBairroFC .EstNomeCampo{color:#FF0000;}#idPCidadeFC .EstNomeCampo{color:#FF0000;}#idPEstadoFC .EstNomeCampo{color:#FF0000;}#idPPaisFC .EstNomeCampo{color:#FF0000;}#idPCEPFC .EstNomeCampo{color:#FF0000;}#idTablePCEPFC .EstNomeCampo{color:#FF0000;}#idPTelefoneFC .EstNomeCampo{color:#FF0000;}
+
+/* Menu */
+.HeaderMobileMenuSlider #showLeftPush{display:block;width:100%;cursor:pointer;margin:7px 0;}
+.HeaderMobileMenuClose #showLeftPush2 img{position:relative;top:10px;left:230px;cursor:pointer;}
+.HeaderMobileMenuSlider #showLeftPush img{position:relative;top:-8px;}
+.cbp-spmenu{background:<tag-FCCSSMainColor>;position:fixed}
+.cbp-spmenu a{display:block;color:#ffffff;font-size:1.1em;font-weight:300;}
+.cbp-spmenu a:hover{background:<tag-FCCSSSecondMainColor>;}
+.cbp-spmenu a:active{background:<tag-FCCSSSecondMainColor>;color:<tag-FCCSSMainColor>;}
+.cbp-spmenu-vertical {width:280px;height:100%;top:0;z-index:1000;}
+.cbp-spmenu-vertical a{border-bottom:1px solid <tag-FCCSSSecondMainColor>;padding:1em;}
+.cbp-spmenu-left{left:-280px;}
+.cbp-spmenu-right{right:-280px;}
+.cbp-spmenu-left.cbp-spmenu-open{left:0px;}
+.cbp-spmenu-right.cbp-spmenu-open{right:0px;}
+.cbp-spmenu-push{overflow-x:hidden;position:relative;left:0;}
+.cbp-spmenu-push-toright{left:240px;}
+.cbp-spmenu-push-toleft{left:-240px;}
+.cbp-spmenu, .cbp-spmenu-push{-webkit-transition:all 0.3s ease;-moz-transition:all 0.3s ease;transition:all 0.3s ease;}
+
+/* Header */
+.HeaderPedBackground{background-color:<tag-FCCSSMainColor>;height:5px;width:100%;}
+.LogoSize{max-width:180px;}
+div .LogoSize{text-align-center;}
+.HeaderBasket{line-height:33px;padding-top:9px !important;padding-left:-15px !important;}
+.HeaderBasket span{display:block;margin:0 0 0 5px;}
+.HeaderBasket img{float:left;position:relative;left:-7px;}
+.HeaderCartItensPosition{position:relative;left:20px;top:-30px;}
+.HeaderBasket span, .HeaderBasket svg{float:left;}
+.HeaderCartItensPosition .HeaderCartNumberProds{background-color:<tag-FCCSSMainColor>;border-radius:50%;height:32px;width:30px;position:absolute;left:-15px;top:15px;}
+.HeaderCartNumberProds{color:<tag-FCCSSColor3>;font-family:'Roboto',verdana,arial;font-weight:700;}
+.HeaderSearchForm{position:relative;}
+.HeaderSearchForm input[type='text']{min-height:41px;border-radius:5px;border:0;width:100%;margin-top:10px;padding:13px 45px 10px 10px;border:1px solid <tag-FCCSSBorderColor>;background-color:<tag-FCCSSColor8>;font-style:italic;}
+.HeaderSearchForm ::-webkit-input-placeholder{color:<tag-FCCSSColor4>;font-family:'Roboto',verdana,arial;font-weight:400;font-size:0.90em;}
+.HeaderSearchForm :-moz-placeholder {color:<tag-FCCSSColor4>;opacity:1;font-family:'Roboto',verdana,arial;font-weight:400;font-size:0.90em;}
+.HeaderSearchForm ::-moz-placeholder {color:<tag-FCCSSColor4>;opacity:1;font-family:'Roboto',verdana,arial;font-weight:400;font-size:0.90em;}
+.HeaderSearchForm :-ms-input-placeholder{color:<tag-FCCSSColor4>;font-family:'Roboto',verdana,arial;font-weight:400;font-size:0.90em;}
+.HeaderTopSearchSubmit{position:absolute;top:14px;right:0px;}
+.HeaderSearchField{margin-bottom:8px;}
+
+/* Global Signin - BarraTopo.htm */
+#idImgGlobalSignFC .FacebookSigninClass{width:24px;height:24px;margin-left:10px !important;}
+#idImgGlobalSignFC .GoogleSigninClass{width:24px;height:24px;margin-left:15px !important;}
+.HeaderSocialLoginContainer #UserImage{float:left;margin:0px -8px 0px 0px !important}
+.HeaderSocialLoginContainer .loginInfo{float:left;position:relative;top:5px;}
+.HeaderSocialLoginContainer #idImgGlobalSignFC{float:left;position:relative;top:25px;left:8px;}
+.loginInfo .HeaderSolcialLoginDoit{position:relative;top:5px;left:8px;}
+.HeaderSocialLoginLogout{font-size:0.8rem;}
+
+/* Home */
+.HomeProd{position:relative;min-height:310px;}
+.ImgCapaProd{display:block;line-height:284px;}
+.DivHomeImagemProd img{border:1px solid <tag-FCCSSBorderColor>;vertical-align:middle;max-width:125px;}
+.HomeProd{cursor:pointer;width:90%;box-sizing:content-box;margin:0px 0px 0px 0px;padding:0.5em;}
+.HomeNomeProd{font-family:'Roboto',verdana,arial;font-weight:700;padding:10px 0px 10px 0px;height:43px;overflow:hidden;text-overflow:ellipsis;width:135px;margin:0px 0px 0px 0px;color:<tag-FCCSSPrincipalTxtColor>}
+.DivHomePriceProd{float:left;}
+.DivHomePrice{text-align:left;}
+.DivHomePrice .prices{margin-top:5px;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSPriceColor>;}
+.DivHomePrice .prices a, .prices{font-size:1em;position:relative;}
+
+/* List, Det - EstiloProduto.htm */
+.ListProductStyleProd{position:relative;margin:0 10px;}
+.ImgCapaListProd{display:block;line-height:220px;}
+.DivListProductStyleImagemProd img{border:1px solid <tag-FCCSSBorderColor>;vertical-align:middle;max-width:120px;}
+.ListProductStyleProd{cursor:pointer;width:100%;box-sizing:content-box;margin:0px 0px 0px 0px;padding:0.5em;}
+.ListProductStyleNomeProd{font-family:'Roboto',verdana,arial;font-weight:700;padding:10px 0px 10px 0px;height:43px;overflow:hidden;text-overflow:ellipsis;color:<tag-FCCSSPrincipalTxtColor>}
+.ListProductStyleNomeProd a{color:<tag-FCCSSPrincipalTxtColor>;}
+.DivListProductStylePriceProd{float:left;}
+.DivListProductStylePrice{text-align:left;}
+.DivListProductStylePrice .prices{margin-top:5px;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSPriceColor>;}
+.DivListProductStylePrice .prices a, .prices {font-size:1em;position:relative;}
+.DivDetBtnRelease{text-align:right;margin-bottom:10px;}
+.ProductStyleBoxFC{width:100%;padding:25px;border:1px solid <tag-FCCSSBorderColor>}
+.DivDetRef{text-align:left;margin-bottom:10px;}
+#idCodProdGrid{font-family:'Roboto',verdana,arial;font-weight:300;}
+#idNameProductGridFC{font-size:1.8em;margin-bottom:10px;font-family:'Roboto',verdana,arial !important;font-weight:700;}
+.DivDetCat{margin-bottom:10px;}
+.ProductStyleBoxBGFC{background-color:#f6f6f6;margin:0px -20px 0px -20px;padding:10px 0px 10px 20px;}
+.ProductStyleDetprice .FCCurrencyLabel{font-size:1em;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSPriceColor>}
+.ProductStyleDetprice .FCPriceInt{font-size:2.5em;font-family:'Roboto',verdana,arial;font-weight:700;color:<tag-FCCSSPriceColor>}
+.ProductStyleDetprice .FCPriceCent{font-size:1.5em;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSPriceColor>}
+.EstParcPrice{font-size:1em;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSColor15>}
+.ProductStyleDetprice strike .FCCurrencyLabel{font-size:1em;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSPriceStrikeColor>}
+.ProductStyleDetprice strike .FCPriceInt{font-size:2.5em;font-family:'Roboto',verdana,arial;font-weight:700;color:<tag-FCCSSPriceStrikeColor>}
+.ProductStyleDetprice strike .FCPriceCent{font-size:1.5em;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSPriceStrikeColor>}
+.ProductStyleBoxDescriptionFC{font-family:'Roboto',verdana,arial;font-weight:400;line-height:20px;}
+#idDivImagemTopoCatFC img{max-width: 100%}
+
+/* ZipCode - EstiloProduto.htm */
+#idDivCEPFC{box-sizing:border-box;font-family:'Roboto',verdana,arial;font-weight:400;}
+#idDivTitCEP{width:100%;font-size:0.8em;font-family:'Roboto',verdana,arial;font-weight:400;margin-bottom:5px;font-size:14px;text-align:left;}
+.FieldCEPQty{box-sizing:border-box;padding:0 0 0 5px;margin:0 5px 0 0;border:1px solid <tag-FCCSSInputBorderColor>;}
+.FieldCEPQty input{margin:0 0 0 10px;border:0;width:54px;text-align:center;height:28px;}
+.FieldCEPNum input{width:90px;padding-left:10px;height:30px;}
+.FieldCEPBtn{height:30px;color:<tag-FCCSSColor3>;font-family:'Roboto',verdana,arial;font-weight:700;cursor:pointer;background:<tag-FCCSSColor16>;color:<tag-FCCSSColor3>;}
+.FieldCEPBtn, .FieldCEPQty, .FieldCEPNum{float:left;}
+#idDivTitCEP span{padding:0 0 0 10px;position:relative;top:-8px;}
+#idDivCEPCalc{margin:0px 0;padding:10px 0;}
+#idDivCEPButton button{background-color:<tag-FCCSSZipCodeColor>;color: <tag-FCCSSInputColor>;transition:background-color 0.2s ease;width:100%;border-radius:5px;-webkit-border-radius:5px;-moz-border-border-radius:5px;border:none;padding:10px 25px 10px 25px;cursor:pointer;font-family:'Roboto',verdana,arial;font-weight:700;font-size:18px;}
+#idDivCEPButton button:hover {background-color:<tag-FCCSSBorderColor>;}
+#idDivImgLoadingCEPFC{width:100%;margin-top:10px;text-align:center;}
+#idDivContentFieldsCEP{border-top:0px solid <tag-FCCSSZipCodeColor>;}
+.ZipName{font-size:0.8em;font-family:'Roboto',verdana,arial;font-weight:400;font-weight:bold;}
+.ZipObsVal{font-size:0.7em}
+.ZipValue{font-size:0.8em;font-weight:bold;color:<tag-FCCSSColor17>;}
+.ZipOption:first-child{border-top:0;}
+.ZipOptions{width:100%;display:table;text-align:left;margin:0 0 0 0;clear:both;}
+.ZipOption{width:100%;display:table;padding:10px 0 10px 0;border-top:1px solid <tag-FCCSSZipCodeColor>;}
+.ZipNameObs{width:70%;float:left;}
+.ZipValue{width:30%;float:left;}
+.zip-container{margin-top:30px;max-width:500px;padding:10px;border:1px solid <tag-FCCSSZipCodeContainerColor>;}
+.FieldCEP label{font-size:12px;font-family:'Roboto',verdana,arial;font-weight:400;}
+.freightResult{display:block;margin:54px 0 0 0;text-align:left;}
+
+/* List Filters - EstiloProduto.htm */
+#idHeadFilters{font-size:0.9em;margin:10px 0 10px 0;padding:10px;border-style:solid;border:1px solid <tag-FCCSSBorderColor>;background-color:<tag-FCCSSColor8>;box-sizing:border-box;float:left;width:100%;border-radius:5px;-webkit-border-radius:5px;-moz-border-border-radius:5px;}
+#idTxtFilters{float:left;font-family:'Roboto',verdana,arial;font-weight:400;margin:4px 0 0 0}
+#idShowFilters{float:left;margin:0 0 0 5px;font-family:'Roboto',verdana,arial;font-weight:400;}
+#idHideFilters{float:left;margin:0 0 0 5px;font-family:'Roboto',verdana,arial;font-weight:400;}
+#idShowFilters button{padding:4px 10px 4px 10px;font-size:11px;font-weight:bold;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;cursor:pointer;background-color:<tag-FCCSSColor17>;border:0 solid <tag-FCCSSColor17>;color:<tag-FCCSSColor8>;}
+#idShowFilters button:hover{background:<tag-FCCSSInputColor>}
+#idHideFilters button{padding:4px 10px 4px 10px;font-size:11px;font-weight:bold;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;cursor:pointer;background-color:<tag-FCCSSInputColor>;border:0 solid <tag-FCCSSInputColor>;color:<tag-FCCSSColor8>;}
+#idHideFilters button:hover{background:<tag-FCCSSListFiltersColor>}
+#idFiltersFC{font-size:0.9em;margin:10px 0 10px 0;border-style:solid;border:1px solid <tag-FCCSSBorderColor>;background-color:<tag-FCCSSColor8>;box-sizing:border-box;float:left;width:100%;border-radius:5px;-webkit-border-radius:5px;-moz-border-border-radius:5px;width:100%;display:table;box-sizing:border-box;}
+#idFiltersFC ul li{padding:3px;font-size:0.8em;}
+#idFiltersFC ul li select{padding:5px;border-radius:3px;background-image:none;color:<tag-FCCSSInputColor>;}
+.EstTitQts{font-family:'Roboto',verdana,arial !important;font-weight:700;font-size:16px !important;}
+#idUlPathCatQtFC, #idUlAdic1QtFC, #idUlAdic2QtFC, #idUlAdic3QtFC{text-align:left !important;font-family:'Roboto',verdana,arial !important;font-weight:400;font-size:16px !important;}
+#idDivPath{width:100%;display:block;box-sizing:border-box;}
+#idHeadFilters{width:100%;display:block;box-sizing: border-box;}
+#idListaProdCategoriasFC{width:34%;float:left;padding:10px;box-sizing:border-box;min-width:240px;}
+#idListaProdAdicional1FC{width:22%;float:left;padding:10px;box-sizing:border-box;min-width:240px;}
+#idListaProdAdicional2FC{width:22%;float:left;padding:10px;box-sizing:border-box;min-width:240px;}
+#idListaProdAdicional3FC{width:22%;float:left;padding:10px;box-sizing:border-box;min-width:240px;}
+#idUlPathSearchFC .del{margin-left:3px;}
+#idUlPathSearchFC .del a{cursor:pointer;padding:0;margin:0 3px 0 3px;}
+#idUlPathSearchFC .del a:hover{cursor:pointer;}
+#idUlPathSearchFC .del img{width:11px;border:0;}
+#idUlPathSearchFC .pad {background:url("<PathTo file="/images/pathcat.gif">") no-repeat center;padding:0;margin:1px 6px 1px 8px;}
+#idUlPathSearchFC .pad img{width:3px;height:5px;}
+#idDivSearch{font-size:0.9em;margin:10px 0 10px 0;padding:10px;border-style:solid;border:1px solid <tag-FCCSSBorderColor>;background-color:<tag-FCCSSColor8>;box-sizing:border-box;float:left;width:100%;border-radius:5px;-webkit-border-radius:5px;-moz-border-border-radius:5px;}
+#idTxtFiltersBy{float:left;margin-right:10px;}
+#idTxtRemoveFilters{float:left;margin-left:10px;}
+#idTxtRemoveFilters a{padding:4px 10px 4px 10px;font-size:11px;font-weight:bold;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background-color:<tag-FCCSSColor1>;border:0 solid <tag-FCCSSColor1>;color:<tag-FCCSSColor8>;}
+#idTxtRemoveFilters a:hover{background-color:<tag-FCCSSListFiltersColor>;}
+#idTDLinkAdvancedSearchFC{float:right;margin:2px 0 0 5px}
+#idTablePathSearchFC{display:block;float:left;width:100%;margin:10px 0 0 0;}
+#idUlPathSearchFC{margin-left:10px;font-size:8pt;float:left;}
+#idUlPathSearchFC li{font-size:8pt;}
+#idUlPathSearchFC #idPathSearchTextInputFC{width:95px;font-size:9pt;background-color:<tag-FCCSSColor8>;}
+#idLinkAdvancedSearchFC{text-decoration:none;font-size:8pt;}
+#idLinkAdvancedSearchFC:hover{text-decoration:underline;color:<tag-FCCSSColor4>;}
+.EstTitQts{font-family:tahoma;font-size:8pt;padding:5px;background-color:<tag-FCCSSColor7>;}
+.EstDivQts{height:100%;border-style:solid;border:1px solid <tag-FCCSSBorderColor>;}
+#idSelPathCatQtFC, #idSelAdic1QtFC, #idSelAdic2QtFC, #idSelAdic3QtFC{width:100%;}
+#idUlPathCatQtFC li,#idUlAdic1QtFC li,#idUlAdic2QtFC li,#idUlAdic3QtFC li{list-style-type:none;font-size:8pt;margin:5px 10px 3px 5px}
+.EstTabFiltersExt{height:28px;font-family:tahoma;font-size:8pt;background-color:<tag-FCCSSColor10>;}
+.EstTabFiltersInt{background-color:<tag-FCCSSColor8>;}
+.FCfnShowEconomy{font-size:16px;display:block;margin:10px 0;color:<tag-FCCSSPriceEconomy>}
+#ContentFil .DivFiltrandoPor .Label{background:<tag-FCCSSMainColor> !important}
+#ContentFil .DivFiltrarPor .Label{background:<tag-FCCSSMainColor> !important}
+.ListProductStyleSelect{border:1px solid #ccc;width:108%;border-radius:3px;overflow:hidden;background:#fafafa url('<PathTo file="images/iconarrowdown.svg">') no-repeat 90% 50%;}
+.ListProductStyleSelect select {padding:5px 8px;width:130%;border:none;box-shadow:none;background:transparent;background-image:none;-webkit-appearance:none;font-size:1.2em;}
+.ListProductStyleSelect select:focus{outline:none;}
+
+/* Filters */
+#ContentFil .DivFiltrandoPor{padding:10px 0 0 10px;}
+#ContentFil .DivFiltrandoPor .Label{font-weight:bold;font-family:arial;font-size:13px;background:<tag-FCCSSMainColor>;width:100%;display:block;padding:5px 0 5px 5px;color:#fcfcfc;border-radius:3px;}
+#ContentFil .DivFiltrarPor{padding:25px 0 0 10px;}
+#ContentFil .DivFiltrarPor .Label{font-weight:bold;font-family:arial;font-size:13px;background:<tag-FCCSSMainColor>;width:100%;display:block;padding:5px 0 5px 5px;color:#fcfcfc;border-radius:3px;}
+#ContentFil .FilSearch{padding:5px 0 0 5px;margin:0;list-style-type:none;}
+#ContentFil .FilSearch .FilName{margin:20px 0 5px 0;font-weight:bold;font-family:arial;font-size:12px;cursor:pointer;}
+#ContentFil .FilSearch .FilName img{padding:0 4px 0 0;cursor:pointer;width:16px;height:16px;}
+#ContentFil .FilItems .FilItemsList{width:150px;padding:0;margin:0;list-style-type:none;max-height:97px;overflow-x:auto;overflow-y:auto;}
+#ContentFil .FilItems .FilItemsList::-webkit-scrollbar{-webkit-appearance:none;width:7px;}
+#ContentFil .FilItems .FilItemsList::-webkit-scrollbar-thumb{border-radius:4px;background-color:#666666;-webkit-box-shadow:0 0 1px;}
+#ContentFil .FilSearch .SearchFil{margin:3px 0 10px 0;border:1px solid #cecece;width:150px;height:22px;font-size:11px;padding:0 0 0 5px;}
+#ContentFil #idFilSearchTextInputFC{border:1px solid #cecece;width:120px;height:22px;font-size:11px;}
+#ContentFil .FilItems .FilItemsList li{line-height:16px;}
+#ContentFil .FilItems .FilItemsList label{font-size:11px;cursor:pointer;}
+#ContentFil .FilItems .FilItemsList li input[type=checkbox]{margin:4px 5px 2px 0;cursor:pointer;}
+#ContentFil .FilItems .FilItemsList li input[type=radio]{margin:4px 5px 2px 0;cursor:pointer;}
+#ContentFil .FilItems .FilItemsList .ColorSearch{color:#64AED9;}
+#ContentFil .SearchTextFil{text-decoration:underline;font-weight:bold;}
+#ContentFil .SearchItem{font-weight:bold;}
+#ContentFil .ImageFil{margin:0 3px 0 0;width:16px;height:16px;border-radius:8px;line-height:8px;display:inline-block;vertical-align:bottom;border:1px solid #dedede;}
+#ContentFil .ColorFil{margin:0 3px 0 0;width:16px;height:16px;border-radius:8px;line-height:8px;display:inline-block;vertical-align:bottom;border:1px solid #dedede;}
+#ContentFil .FilNotFound{font-size:11px;}
+#ContentFil .FiltrandoPor{padding:5px 0 15px 5px;margin:0;list-style-type:none}
+#ContentFil .FiltrandoPor li{margin-top:10px;font-size:11px;}
+#ContentFil .FiltrandoPor img{width:10px;cursor:pointer;margin-left:3px;}
+#ContentFil .FilRemoveFilters{margin-top:15px;}
+#ContentFil .FilRemoveFilters a{background-color:#dedede;color:#555555;border-radius:3px;font-weight:bold;font-size:11px;padding:4px 10px 4px 10px;text-decoration:none;}
+#ContentFil .FilRemoveFilters a:hover{background-color:#990000;color:#fcfcfc;}
+#ContentFil .FilMoreOptionsSearch{margin-top:15px;}
+#ContentFil .FilMoreOptionsSearch a{background-color:#dedede;color:#555555;border-radius:3px;font-weight:bold;font-size:11px;padding:4px 10px 4px 10px;text-decoration:none;}
+#ContentFil .FilMoreOptionsSearch a:hover{background-color:#5C9E0D;color:#fcfcfc;}
+#ContentFil .SetaDireita:before{content: "";display:inline-block;vertical-align:middle;margin-right:8px;margin-bottom:3px;width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:5px solid #0E72D2;}
+#ContentFil .SetaBaixo:before{content:"";display:inline-block;vertical-align:middle;margin-right:3px;margin-bottom:5px;width:0;height:0;border-left:5px solid transparent;border-right: 5px solid transparent;border-top:5px solid #555555;}
+
+/* Breadcrumb - EstiloProduto.htm */
+.ProductStyleBreadCrumblinkFC{font-size:12px;font-family:'Roboto',verdana,arial;font-weight:400;}
+.EstPathCat .pad{background:url('<PathTo file="images/iconabreadcrumb.svg">') no-repeat bottom center !important;padding:0 10px 12px 12px !important;width:15px !important;height:15px !important;position:relative;margin-top:1px;}
+.EstPathCatLink{font-size:12px;font-family:'Roboto',verdana,arial;font-weight:400;}
+#idBreadcrumb{margin: 15px 0 50px 0;}
+.pad{margin-top: -7px;}
+#idBreadcrumb ul li{list-style:none;float:left;}
+#idBreadcrumb ul li:first-child{margin:0 5px 0 0;}
+.EstPathCat ul li:first-child{margin:0 !important;}
+#idBreadcrumb a{color:<tag-FCCSSPrincipalTxtColor>;}
+
+/* Wave */
+.text-overflow{box-sizing:border-box;display:block;display:-webkit-box;max-width:400px;min-height:35px;margin:0 auto;line-height:18px;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;}
+.center-col{margin:0 auto;float:none !important;display:block;}
+
+/* Error 404 */
+.FCError404h1{font-size:2rem;margin:25px 0px 25px 0px}
+.FCError404h2{font-family:'Roboto',Arial,sans-serif;font-weight:400;}
+
+/* Product Availability */
+#idProductAvailFC #idTitTextoFC{line-height:35px;font-family:'Roboto',verdana,arial;font-weight:700;color:<tag-FCCSSPrincipalTxtColor>;}
+#idProductAvailFC #idTxtProductShareFC{font-size:0.8em;font-family:'Roboto',verdana,arial;font-weight:400;}
+
+/* FCProduct Share */
+#idProductShareFC #idTitTextoFC{line-height:35px;font-family:'Roboto',verdana,arial;font-weight:700;color:<tag-FCCSSPrincipalTxtColor>;}
+#idProductShareFC #idTxtProductShareFC{font-size:0.8em;font-family:'Roboto',verdana,arial;font-weight:400;}
+
+/* Departments - Categorias.htm */
+#SubCatTemplate{display:none;}
+ul{-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0;-webkit-padding-start:0;-moz-margin-before:0;-moz-margin-after:0;-moz-margin-start:0;-moz-margin-end:0;-moz-padding-start:0;}
+.CatContainerFC{border:1px solid <tag-FCCSSBorderColor>;min-width:260px;height:280px;box-sizing:border-box;padding:70px 0 0 0;margin:0 5px;float:left;position:relative;background-repeat:no-repeat;background-size:300px;margin-top:25px;cursor:pointer;}
+.CatListFC{width:100%;height:100%;opacity:0.9;margin:0;padding:10px 0 0 0;}
+.CatListFC li{list-style:none;padding:7px 6px 7px 12px;box-sizing:border-box;text-align:left;} 
+.CatListFC li a{text-decoration:none;}
+.CatListFC{background:<tag-FCCSSColor3>;}
+.CatSeeMoreFC{background:<tag-FCCSSMainColor>;}
+.CatSeeMoreFC a{color:<tag-FCCSSColor3>;}
+.CatListFC .MainCatFC{font-size:18px;font-weight:bold;}
+.CatListFC .SubCatFC{padding-left:20px;}
+.CatSeeMoreFC{position:absolute;bottom:0;width:100%;height:30px;box-sizing:border-box;padding:7px 10px;text-align:left;}
+.CatListFC li:nth-child(n+6){display:none;}
+.Cat0FC a{font-size:16px;font-family:'Roboto',verdana,arial;font-weight:400;text-transform:uppercase;color:<tag-FCCSSSecondMainColor>}
+.Cat1FC a{font-size:15px;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSMainColor>}
+.Cat1FC a:before{content:"• ";}
+.Cat2FC a{font-size:15px;padding-left:25px !important;font-family:'Roboto',verdana,arial;font-weight:400;color:<tag-FCCSSMainColor>}
+.Cat2FC a:before{content:"• ";}
+
+/* Init mixtiup */
+.sort{cursor:pointer;}
+.FCBtnMixit{display:inline-block;vertical-align:middle;margin:5px;padding:8px;box-sizing:border-box;border-top:1px solid transparent;border-radius:3px;background:<tag-FCCSSColor7>;color:<tag-FCCSSInputColor>;border-bottom:1px solid <tag-FCCSSColor10>;}
+#Container .mix{display:none;}
+.activeCatStore{background:<tag-FCCSSMainColor>;color:<tag-FCCSSColor3>;}
+
+/* Xtreme Checkout */
+.FC-ShowCartOffPageLink a{text-decoration:none;font-size:12px;}
+.FC-ShowCartOffPageLink a:hover{text-decoration:none;font-size:12px;text-decoration:underline;}
+.FC-ShowCartOnPageLink a{text-decoration:none;font-size:12px;font-weight:bold}
+.FC-ShowCartOnPageLink a:hover{text-decoration:none;font-size:12px;text-decoration:underline;font-weight:bold}
+.FC-ShowCartOnPageLinkCart a{border-width:1px;font-weight:bold;font-size:12px;font-family:verdana;cursor:pointer;border-radius: 10px;-moz-border-radius:10px;-webkit-border-radius:10px;}
+.FC-ShowCartOnPageLinkCart a:hover{border-width:1px;font-weight:bold;font-size:12px;font-family:verdana;cursor:pointer;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;text-decoration:underline;}
+#idCheckoutFC a #idTxtLinkContinueFC{padding:10px;cursor:pointer;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;font-weight:bold} 
+#idCheckoutFC a:hover #idTxtLinkContinueFC{padding:10px;cursor:pointer;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;font-weight:bold}
+
+/* Store.css */
+#FCCartRightWrap .FCCartWrapLabel, #FCCartRightWrap .FCCartWrapValue{border-top:0 !important;}
+#FCCartRightCupom{padding:5px !important;}
+
+/* Cart */
+.FCCartContainer{position:relative;font-size:0.8em;}
+table[name="TabEnvioInt"]{margin:50px 0;}
+table[name="TabEnvioInt"] td{vertical-align:middle;padding:5px 5px;}
+#idTabRadioPagtoFC td{vertical-align:middle;padding:10px 5px;}
+.InfoBanners{margin-top:45px !important;}
+#idTDFreightSimulationFC .EstTabPedido td{padding:12px 5px 0 0;vertical-align:middle;}
+#idTDFreightSimulationFC #idBut{border-radius:3px;-webkit-border-radius:3px;-moz-border-border-radius:3px;border:none;padding:6px 5px;cursor:pointer;}
+#idDivLinkContinueFC{height:37px !important;width:210px !important;background-color:#6ea853;}
+#idTabLoginFC #Email {height:24px;margin:0px 0px 10px 0px !important;}
+#idTabLoginFC #SenhaAtual {height:24px;margin:5px 0px 0px 0px !important;}
+.FCCheckout input{height:24px !important;margin:5px 0}
+.FCCheckout #idChkTxtPedConfirmadoFC{line-height:30px;}
+.FCCheckout #idTxtOrderCompletionFC{line-height:30px;}
+.FCCart .EstTabPedido{line-height:20px;}
+.EstTabPedido a .EstFotoProdCesta{margin:0px 0px 0px -5px;}
+.FCCartItemProdImg {border:0px solid #e8e8e8 !important;}
+#idTabLoginFC #Email{margin: 0 0 9px 15px !important;width:90% !important}
+#idTabLoginFC #SenhaAtual{margin: 0 0 9px 10px !important;width:90% !important}
+#idChkRegisterFC input[type="text"], #idChkRegisterFC input[type="password"], #idCheckoutFC .smSelect, #idTxtPhoneFC{margin: 5px 0px 5px 10px !important;}
+.FCCheckout #idTxtDadosEntregaFC label{font-size:1.5em !important;}
+#idCheckoutFC #idTxtComentsFC{font-size:1.2em !important;}
+.FCCheckout #idTabFreteOptFC label{padding:0px 0px 0px 10px !important}
+.FCCheckout #idTabFreteOptFC label #idTxtObsCEPFC{padding:0px 0px 0px 10px !important}
+.FCCheckout #idTxtTotalPedidoFC{line-height:25px;}
+#idRegisterFC table{width:100%;}#idIdentifyFC{display:table;margin:0 auto 10px auto;}
+#idCheckoutFC .EstChkNomeCampo{line-height:20px !important;}
+
+/* Grid final Style */
+[class*='gridLevel']{clear:both;width:100%;height:100%;padding:10px 5px !important;box-sizing:border-box;text-align:center;background:transparent;border:1px solid #ccc;margin:10px 0 !important;}
+[class*='descriChoice']{clear:both;width:100%;float:left;text-align:left;box-sizing:border-box;padding:0 0 10px 10px;font-family:'Roboto',verdana,arial;font-weight:700;}
+
+/* Remove quadrado do campo obrigatório */
+.EstDivRequired{display:none;}
+
+/* Alteracoes no Vex */
+.vex.vex-theme-default{padding-top: 65px !important;}
+
+/* Remove LogoTopo */
+#idStoreLogoFC{display:none;}
