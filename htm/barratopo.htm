@@ -1,0 +1,114 @@
+<!-- Includes CSS -->
+<link rel="stylesheet" href="/wave/v3/wavemin.css?cccfc=1">
+<script>FCLib$.loadAsyncCSS('<PathTo file="htm/css/jquery_ui.css">');</script>
+<!--[if IE]><style type="text/css">.ui-autocomplete-category{margin-top: -2px}</style><![endif]-->
+<!-- Includes Javascript -->
+<script src='<PathTo file="htm/jurosparcelas.js">'></script>
+<script src='<PathTo file="htm/lojalib.js">'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src='<PathTo file="htm/js/autosuggesttbar.js">'></script>
+<script src='<PathTo file="htm/js/autosuggest.js">'></script>
+<script src='<PathTo file="htm/js/scrolltothetop.js">'></script>
+<script src='<PathTo file="htm/js/tinynav.js">'></script>
+<script>iItensCesta=<QtdCesta>;</script>
+
+<!-- Begin: Toolbar -->
+<div class="FCToolBar">
+  <div class="FCToolBarContainer">
+    <tag-FCHeaderToolBarLogo>
+    <tag-FCHeaderToolBarCategories>
+    <tag-FCHeaderToolBarSearch>
+    <span class="FCToolBarChatTel">
+      <a href="#" style="float:left;" class=""><img64 src="<BaseLoja>images/iconcomphone.svg" plain="true" width="20" height="20"></a>
+      <p><tag-FCHeaderToolBarPhone></p>
+    </span>
+    <tag-FCHeaderToolBarCart>
+  </div>
+</div>
+<script>var w=jQuery(window).width();w>1024&&ToolbarCartExec();</script>
+<!-- End: Toolbar -->
+
+<!-- Begin: Logo|Menu|Search|Cart -->
+<div class="MainContainer">
+  <div class="row FullSpaceFC">
+    <div class="col-small-12 col-medium-3 col-large-3 col-xlarge-3 text-medium-left text-large-left text-xlarge-left">
+      <tag-FCHeaderLogo>
+    </div>
+    <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6">
+      <div class="HeaderMenuOneFC hide-small">
+        <ul>
+          <li><tag-FCHeaderMenuAccount></li>
+          <li><tag-FCHeaderMenuTrack></li>
+          <li><tag-FCHeaderMenuContact></li>
+        </ul>
+      </div>
+      <!-- Begin Search -->
+       <tag-FCHeaderSearch>
+      <!-- End Search -->
+    </div>
+    <!-- Begin Cart -->
+    <div class="col-small-12 col-medium-3 col-large-3 col-xlarge-3">
+      <div class="HeaderCartMainFC">
+        <tag-FCHeaderCart>
+      </div>
+    </div>
+    <!-- End Cart -->
+  </div> 
+</div>
+<!-- End: Logo|Menu|Search|Cart -->
+
+<!-- Begin Social Login User -->
+<div class="MainContainer HeaderSocialLoginPosition">
+  <div class="row">
+    <div class="col-medium-3 col-large-3 col-xlarge-3"></div>
+    <div class="col-small-12 col-medium-8 col-large-6 col-xlarge-6">
+    <tag-FCHeaderSocialLogin>
+    </div>
+    <div class="col-medium-1 col-large-3 col-xlarge-3"></div>
+  </div>
+</div>
+<!-- End Social Login User -->
+
+<!-- Begin Main Menu -->
+<div class="HeaderMainMenuFC">
+  <div class="MainContainer">
+    <div class="row collapse">
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+        <nav class="SmallMenuContainer">
+          <div class="SmallMenuButtom">
+            <tag-FCHeaderMenuMobileIcon>
+          </div>
+          <ul class="SmallMenuList HeaderMenuULFC">
+            <tag-FCHeaderMenuMobile1>
+            <tag-FCHeaderMenuMobile2>
+            <tag-FCHeaderMenuMobile3>
+            <tag-FCHeaderMenuMobile4>
+            <tag-FCHeaderMenuMobile5>
+            <tag-FCHeaderMenuMobile6>
+          </ul>
+        </nav>
+        <ul class="HeaderMenuULFC smallMenuHide">  
+          <tag-FCHeaderMenu1>
+          <tag-FCHeaderMenu2>
+          <tag-FCHeaderMenu3>
+          <tag-FCHeaderMenu4>
+          <tag-FCHeaderMenu5>
+          <tag-FCHeaderMenu6>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Main Menu -->
+
+<!-- Receive Banner Home -->
+<div id="FC-ShowHomeBanners"></div>
+<!-- End Banner Home -->
+
+<div class="FullSpaceFC"></div>
+
+<script>MobileMenuClick();</script>
+
+<!-- Begin Aside BarraEsquerda.htm - Close Rodape.htm - Don't remove -->
+<div class="MainContainer">
+  <div class="row">
