@@ -1,26 +1,29 @@
 <p255>
-<div class="DivHomeProd" onclick="NoCascate('<URLProd>');">
-  <div class="DivHomeImagemProd"><ImagemProd></div>
-  <div class="DivIntHomeProd"> 
-    <div class="DivHomeNomeProd">
-      <span class="HomeNomeProd text-overflow font-16"><NomeProd></span>
+<div>
+  <div class="HomeProd">
+    <div class="DivHomeImagemProd">
+      <a id="various3" class="button line-blue" data-rel="lightcase:myCollection" rel="nofollow" href="/listaprodutos.asp?idloja=<IDLoja>&sty=9&int=1&idproduto=<IDProduto>">
+        <div class="DivHomeSpy">
+          <img src="<PathTo file="images/iconfastpreviewspy.svg">" alt="FastPreview" width="30" height="30">
+          ESPIAR
+        </div>
+      </a>
+      <div class="DivHomeImagemZoom"><a href="<URLProd>" class="ImgCapaProd"><ImagemProd></a></div>
     </div>
-    <div class="DivHomePriceProd" style="white-space:nowrap;">
-      <div id="idProdPrice<IDProduto>"><script>sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script></div> 
-      <div class="PriceAVistaLista"><script>sF$.fnShowParcels(<PrecoNum>,<MaxParcelasProdNum>);</script><br><script>sF$.fnMostraDescontoHome(<PrecoNum>);</script></div>
+    <p class="HomeNomeProd"><NomeProd></p>
+    <div class="DivHomePrice">
+      <div class="DivHomePriceProd" style="white-space:nowrap;">
+        <div id="idProdPrice<IDProduto>"><script>sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script></div> 
+        <div class="PriceAVistaLista"><script>sF$.fnShowParcels(<PrecoNum>,<MaxParcelasProdNum>);</script><br><script>sF$.fnMostraDescontoHome(<PrecoNum>);</script></div>
+      </div>
     </div>
-    <div class="DivHomeSpy hide-small"><a href="#Spy" onclick='bCascate=true;FCLib$.OpenRWD("/listaprodutos.asp?idloja=<IDLoja>&sty=9&int=1&idproduto=<IDProduto>","Disp","width=700,height=700")'>Espiar</a></div>
-    <div class="DivHomeDetails"><a href="<URLProd>">Detalhes</a></div>
+    <div>
+      <a href="<URLProd>">
+        <div class="DivHomeDet">+ MAIS DETALHES</div>  
+        <div id="RateProd<IDProduto>" class='RateProdHome'></div>
+        <script>sF$.reviewProd(<IDProduto>,<OpiniaoQtd>,'<OpiniaoMedia>');</script>
+      </a>
+    </div>
   </div>
 </div>
 </p255>
-
-<p200>
-<div class="DivHomeProdDest">
-  <div class="DivIntHomeProdDest"> 
-    <div class="DivHomeNomeProdDest"><a href="<URLProd>"><span class="HomeNomeProdDest"><NomeProd></span></a></div>
-      <div class="DivHomePriceProdDest"><div id="idProdPrice<IDProduto>"><script>sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script></div></div>
-  </div> 
-  <div class="DivHomeImagemProdDest"><a href="<URLProd>"><ImagemDet></a></div>
-</div>
-</p200>
