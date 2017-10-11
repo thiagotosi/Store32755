@@ -1,62 +1,51 @@
+<!-- sidebar -->
+<div class="sidebar-container">
+  <div class="sidebar-close-container">
+    <img src="<PathTo file="images/ampclose.svg">" width="20" height="20" class="amp-sidebar-btn-close">
+  </div>
+  <nav class="amp-nav">
+    <a href="<PathAMP url="/">"><img64 src="<BaseLoja>images/amp-home.svg" plain="true" width="24" height="24" title="Home"> Home</a>
+    <a href="<PathAMP url="/listaprodutos.asp?idloja=<idloja>&lancamento=true">"><img64 src="<BaseLoja>images/amp-new-releases.svg" plain="true" width="24" height="24" title="Lançamentos"> Lançamentos</a>
+    <a href="<PathAMP url="/listaprodutos.asp?idloja=<idloja>&promocao=true">"><img64 src="<BaseLoja>images/amp-offers.svg" plain="true" width="24" height="24" title="Promoções">Promoções</a>
+    <a href="/buscaavancada.asp?idloja=<idloja>"><img64 src="<BaseLoja>images/amp-search.svg" plain="true" width="25" height="25" title="Buscar"> Busca detalhada</a>
+  </nav>
+  <div class="amp-cats">
+    <a href="<PathAMP url="/categorias.asp?idloja=<idloja>">" class="amp-link-cats"><Categorias></a>
+    <ListPathCat out="13" id="-1">
+  </div>
+</div>
+<div class="sidebar-mask"></div>
+<!-- end sidebar -->
+
 <!-- Includes Javascript -->
-<script src='<PathTo file="htm/jurosparcelas.js">'></script>
 <script src='<PathTo file="htm/mbhlojalib.js">'></script>
+<script src='<PathTo file="htm/jurosparcelas.js">'></script>
 
-<script>
-if(FC$.Page=="Checkout"){
-  FCLib$.loadAsyncCSS('<PathTo file="htm/checkout.css">');
-}
-</script>
-
-<!-- Begin Header Show and Close Menu -->
-<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left HeaderMobileMenuClose" id="cbp-spmenu-s1">
-  <div id="showLeftPush2"><img src="<PathTo file="images/mbhiconmenuclose.svg">"></div>
-  <ListPathCat out="12">
-</nav>
-<!-- End Header Show and Close Menu -->
-
-<div class="HeaderPedBackground"></div>
-<div class="row FullSpaceFC">
-  <div class="MainContainer">
-    <!-- Begin Header Menu -->
-    <div class="col-small-2 col-medium-2 col-large-2 col-mlarge-2 col-xlarge-2 HeaderMobileMenuSlider">
-      <div id="showLeftPush"><img src="<PathTo file="images/mbhiconmenuopen.svg">"></div>
+<header>
+  <div class="amp-top-bar container">
+    <div class="amp-header-container">
+      <div class="amp-header-btn">
+        <!-- <button on='tap:sidebar.toggle' class="amp-sidebar-btn"> -->
+        <button class="amp-sidebar-btn">
+          <img src="<PathTo file="images/mbhiconmenuopen.svg">" />
+        </button>
+      </div>
+      <div class=amp-header-logo>
+        <a href="<PathAMP url="/">"><img src="<PathTo file="images/amplogotopo.png">" /></a>
+      </div>
+      <div class="amp-header-cart">
+        <a href="/AddProduto.asp"><img src="<PathTo file="images/ampiconcart.svg">"></a>
+      </div>
     </div>
-    <!-- End Header Menu -->
-    <!-- Begin Header Logo -->
-    <div class="col-small-8 col-medium-8 col-large-8 col-mlarge-8 col-xlarge-8">
-      <tag-FCHeaderLogo>
-    </div>
-    <!-- End Header Logo -->
-    <!-- Begin Header Cart -->
-    <div class="col-small-2 col-medium-2 col-large-2 col-mlarge-2 col-xlarge-2 HeaderBasket">
-      <tag-FCMbhHeaderCart>
-    </div>
-    <!-- End Header Cart -->
-  </div>
-</div>
-
-<!-- Begin Search -->
-<div class="row HeaderSearchField">
-  <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-12 col-mlarge-12 col-xlarge-12">
-      <tag-FCHeaderSearch>
+    <div class="amp-search-container">
+      <form name="TopSearchForm" method="GET" target="_top" action="/listaprodutos.asp">
+        <input type="hidden" name="idloja" value="<IDLoja>">
+        <input type="hidden" name="digitada" value="true">
+        <input type="text" value="<SearchText>" name="Texto" class="InputTextBusca amp-search-input" placeholder="Digite sua busca aqui">
+        <button type="submit" class="amp-search-btn"><img64 src="<BaseLoja>images/amp-search.svg" plain="true" width="25" height="25" title="Buscar"></button>
+      </form>
     </div>
   </div>
-</div>
-<!-- End Search -->
+</header>
 
-<!-- Begin Social Login -->
-<div class="row" style="white-space:nowrap;">
-  <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-12 col-mlarge-12 col-xlarge-12 HeaderSocialLoginContainer">
-      <tag-FCMbhHeaderLoginMobile>
-      <span id="idImgGlobalSignFC"></span>
-    </div>
-  </div>
-</div>
-<!-- End Social Login -->
-
-<!-- Begin Aside BarraEsquerda.htm - Close Rodape.htm - Don't remove -->
-<div class="MainContainer">
-  <div class="row">
+<section class="container amp-main">
