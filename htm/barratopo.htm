@@ -1,113 +1,129 @@
 <!-- Includes CSS -->
 <link rel="stylesheet" href="/wave/v3/wavemin.css?cccfc=1">
-<script>FCLib$.loadAsyncCSS('<PathTo file="htm/css/jquery_ui.css">');</script>
+<script>
+FCLib$.loadAsyncCSS('<PathTo file="htm/css/jquery_ui.css">');
+FCLib$.loadAsyncCSS('<PathTo file="htm/css/fastpreview.css">');
+</script>
+
 <!--[if IE]><style type="text/css">.ui-autocomplete-category{margin-top: -2px}</style><![endif]-->
 <!-- Includes Javascript -->
 <script src='<PathTo file="htm/jurosparcelas.js">'></script>
 <script src='<PathTo file="htm/lojalib.js">'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-<script src='<PathTo file="htm/js/autosuggesttbar.js">'></script>
-<script src='<PathTo file="htm/js/autosuggest.js">'></script>
-<script src='<PathTo file="htm/js/scrolltothetop.js">'></script>
-<script src='<PathTo file="htm/js/tinynav.js">'></script>
-<script>iItensCesta=<QtdCesta>;</script>
 
+<script src='<PathTo file="htm/js/autosuggesttbar.js">'></script>
 <!-- Begin: Toolbar -->
-<div class="FCToolBar">
-  <div class="FCToolBarContainer">
-    <tag-FCHeaderToolBarLogo>
-    <tag-FCHeaderToolBarCategories>
-    <tag-FCHeaderToolBarSearch>
-    <span class="FCToolBarChatTel">
-      <a href="#" style="float:left;" class=""><img64 src="<BaseLoja>images/iconcomphone.svg" plain="true" width="20" height="20"></a>
-      <p><tag-FCHeaderToolBarPhone></p>
-    </span>
-    <tag-FCHeaderToolBarCart>
+<div class="FCToolBar HideXs">
+  <div class="row">
+    <div class="MainContainer">
+      <div class="col-small-3 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-3 text-left">
+        <a href="<StoreDomain>"><div class="FCToolBarLogo"><img alt="<NomeLoja>" src='<PathTo file="images/logotopo.png">'></div></a>
+      </div>
+      <div class="col-small-2 col-medium-2 col-large-2 col-mlarge-2 col-xlarge-2 text-left">
+        <a class="storeCatToolBar" href="/categorias.asp?idloja=<IDLoja>">Categorias</a>
+      </div>
+      <div class="col-small-4 col-medium-4 col-large-4 col-mlarge-4 col-xlarge-5">
+      	<form name="TopSearchToolbarForm" method="GET" class="FCToolBarForm" id="autocomplete-form-toolbar" action="ListaProdutos.asp?IDLoja=<IDLoja>">
+      	  <div class="HeaderSearchContainer">
+      	    <input type="hidden" value="<IDLoja>" name="IDLoja">
+      	    <input type="hidden" value="True" name="Digitada">
+      	    <input type="text" id="autocomplete-toolbar" value="<SearchText>" name="Texto" class="InputTextBusca ui-autocomplete-input" placeholder="O QUE VOCÊ PROCURA ?" required>
+      	    <input type="image" src='<PathTo file="images/iconsearch.svg">' class="HeaderTopSearchSubmitToolbar">
+      	  </div>
+      	</form>	
+      </div>
+      <div class="col-small-3 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-2">
+        <div class="HeaderBasket">
+          <a href="/addProduto.asp?idloja=<IDLojaNum>">
+          <img src='<PathTo file="images/iconcart.svg">'>
+          <div class="HeaderCartItensPosition"><span id="idCartItemsToolTop" class="HeaderCartNumberProds">0</span></div>
+          <div id="HeaderCartTotalFC"><span id="idCartTotalToolTop">R$ 0,00</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <script>var w=jQuery(window).width();w>1024&&ToolbarCartExec();</script>
 <!-- End: Toolbar -->
 
-<!-- Begin: Logo|Menu|Search|Cart -->
-<div class="MainContainer">
-  <div class="row FullSpaceFC">
-    <div class="col-small-12 col-medium-3 col-large-3 col-xlarge-3 text-medium-left text-large-left text-xlarge-left">
-      <tag-FCHeaderLogo>
-    </div>
-    <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6">
-      <div class="HeaderMenuOneFC hide-small">
-        <ul>
-          <li><tag-FCHeaderMenuAccount></li>
-          <li><tag-FCHeaderMenuTrack></li>
-          <li><tag-FCHeaderMenuContact></li>
-        </ul>
+<!-- Begin Login and Share -->
+<div class="HeaderUserStore">
+  <div class="row">
+    <div class="MainContainer">
+      <div class="col-small-5 col-medium-5 col-large-4 col-mlarge-4 col-xlarge-4 HeaderLoginInfos">
+        <tag-FCHeaderLogin>
+        <span id="idImgGlobalSignFC"></span>
       </div>
-      <!-- Begin Search -->
-       <tag-FCHeaderSearch>
-      <!-- End Search -->
+      <div class="col-small-7 col-medium-7 col-large-8 col-mlarge-8 col-xlarge-8">
+	<ul class="MenuInfosShare" >
+	  <li><tag-FCHeaderMenuInfosShare1></li>
+	  <li><tag-FCHeaderMenuInfosShare2></li>
+	  <li><tag-FCHeaderMenuInfosShare3></li>
+          <li style="white-space:nowrap;">
+            <tag-FCHeaderMenuInfosShare4>
+          </li>
+	</ul>
+      </div>
     </div>
-    <!-- Begin Cart -->
-    <div class="col-small-12 col-medium-3 col-large-3 col-xlarge-3">
-      <div class="HeaderCartMainFC">
+  </div>
+</div>
+<!-- End Login and Share -->
+
+<!-- Begin Logo, Search and Cart -->
+<div class="HeaderLogoSearch">
+  <div class="row">
+      <!-- Begin Logo -->
+    <div class="MainContainer HeaderLogoSearchSpace">
+      <div class="col-small-3 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-3 text-left">
+        <tag-FCHeaderLogo>
+      </div>
+      <!-- End Logo -->
+      <!-- Begin Phone -->
+      <div class="col-small-2 col-medium-2 col-large-2 col-mlarge-2 col-xlarge-2 text-left HeaderContainerPhone">
+	<div class="HeaderPhoneTxt"><a href="/faleconosco.asp?idloja=<IDLojaNum>"><tag-FCHeaderContact></a></div>
+	<div class="HeaderPhoneNumber"><a href="/faleconosco.asp?idloja=<IDLojaNum>"><tag-FCHeaderContactPhone></a></div>
+      </div>
+      <!-- End Phone -->
+      <!-- Begin Search -->
+      <div class="col-small-4 col-medium-4 col-large-4 col-mlarge-4 col-xlarge-5">
+        <tag-FCHeaderSearch>
+      </div>
+      <!-- End Search -->
+      <!-- Begin Cart -->
+      <div class="col-small-3 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-2 HeaderBasket">
         <tag-FCHeaderCart>
       </div>
+      <!-- End Cart -->
     </div>
-    <!-- End Cart -->
-  </div> 
-</div>
-<!-- End: Logo|Menu|Search|Cart -->
-
-<!-- Begin Social Login User -->
-<div class="MainContainer HeaderSocialLoginPosition">
-  <div class="row">
-    <div class="col-medium-3 col-large-3 col-xlarge-3"></div>
-    <div class="col-small-12 col-medium-8 col-large-6 col-xlarge-6">
-    <tag-FCHeaderSocialLogin>
-    </div>
-    <div class="col-medium-1 col-large-3 col-xlarge-3"></div>
   </div>
 </div>
-<!-- End Social Login User -->
+<!-- End Logo, Search and Cart -->
 
-<!-- Begin Main Menu -->
-<div class="HeaderMainMenuFC">
-  <div class="MainContainer">
-    <div class="row collapse">
-      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
-        <nav class="SmallMenuContainer">
-          <div class="SmallMenuButtom">
-            <tag-FCHeaderMenuMobileIcon>
-          </div>
-          <ul class="SmallMenuList HeaderMenuULFC">
-            <tag-FCHeaderMenuMobile1>
-            <tag-FCHeaderMenuMobile2>
-            <tag-FCHeaderMenuMobile3>
-            <tag-FCHeaderMenuMobile4>
-            <tag-FCHeaderMenuMobile5>
-            <tag-FCHeaderMenuMobile6>
-          </ul>
-        </nav>
-        <ul class="HeaderMenuULFC smallMenuHide">  
-          <tag-FCHeaderMenu1>
-          <tag-FCHeaderMenu2>
-          <tag-FCHeaderMenu3>
-          <tag-FCHeaderMenu4>
-          <tag-FCHeaderMenu5>
-          <tag-FCHeaderMenu6>
-        </ul>
+<!-- Begin Menu -->
+<div class="HeaderMainMenu">
+  <div class="row">
+    <div class="MainContainer">
+      <div class="col-small-12 col-medium-12 col-large-12 col-mlarge-12 col-xlarge-12">
+	<div class="HeaderMenuDropdown">
+	  <ul id="mega-menu-tut" class="menu">
+	    <li><a href="/categorias.asp?idloja=<IDLojaNum>"><categorias></a>
+	      <ul>
+	        <li><ListPathCat out="12"></li>
+	      </ul>
+	    </li>
+	    <li><tag-FCHeaderMenu1></li>
+	    <li><tag-FCHeaderMenu2></li>
+	  </ul>
+	</div>
       </div>
     </div>
   </div>
 </div>
-<!-- End Main Menu -->
+<!-- End Menu -->
 
-<!-- Receive Banner Home -->
+<!-- Begin Banner Home -->
 <div id="FC-ShowHomeBanners"></div>
 <!-- End Banner Home -->
-
-<div class="FullSpaceFC"></div>
-
-<script>MobileMenuClick();</script>
 
 <!-- Begin Aside BarraEsquerda.htm - Close Rodape.htm - Don't remove -->
 <div class="MainContainer">
