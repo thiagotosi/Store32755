@@ -180,8 +180,13 @@ var FCGrid$ = function () {
                     +"<a href=\""+imgAmpMini+"\"  rel=\"zoom-id:zoom2;\" rev=\""+ imgDetMini +"\"><img src=\""+ imgDetMini +"\" width=65 height=65 class=ZoomIMG2></a>";
         }
         else{
-          imgDetMini=FC$.PathPrd+novoArray[i];
-          imgAmpMini=FC$.PathPrd+novoArrayAmp[i];
+          if(novoArray[i].indexOf('#')>=0){
+            imgDetMini=novoArray[i].replace('#',FC$.PathPrdExt);
+            imgAmpMini=novoArrayAmp[i].replace('#',FC$.PathPrdExt);
+          }else{
+            imgDetMini=FC$.PathPrd+novoArray[i];
+            imgAmpMini=FC$.PathPrd+novoArrayAmp[i];
+          }
           sHtmlZoom+="<a href="+imgAmpMini+" rel='zoom-id:zoom2;' rev="+ imgDetMini +"><img src="+ imgDetMini +" width=65 height=65 class=ZoomIMG2></a>";
         }
       }
