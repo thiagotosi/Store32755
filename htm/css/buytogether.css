@@ -1,13 +1,12 @@
 /* Fastcommerce - Buy Together  Mar/2016 (v1) */
 #bTContainer hr{border-top:1px solid #cccccc !important;display:block;width:100% !important;height:1px !important;clear:both;}
 #bTContainer{width:100%;float:left;min-height:1px;margin:25px 0;}
-#bTEconomyItemConj{display:none;}
 .bTItem{min-height:280px;float:left;margin:15px 5px;padding:10px;text-align:center;position:relative; }
 .bTItem:after{content: " ";background:url("/images/plus.svg?cccfc=1") no-repeat;background-size:100%;width:18px;height:18px;position:absolute;}
 .bTItensContainer > div:last-of-type:after{background:none;content:"";}
 .bTTotalBuy{float:left;}
 .bTTotalsPrices{position:relative;padding:10px;}
-.bTTotalBuy:before{content:" ";background:url("/images/equal.svg"?cccfc=1) no-repeat;background-size:100%;width:18px;height:18px;position:absolute;left:-20px;top:85px;}
+.bTTotalBuy:before{content:" ";background:url("/images/equal.svg?cccfc=1") no-repeat;background-size:100%;width:18px;height:18px;position:absolute;left:-20px;top:85px;}
 .bTProdSelectName{width:100%;clear:both;padding:5px 0;position:relative;top:-60px;}
 .bTProdSelectName label{font-size:13px;}
 .bTText{float:left;width:100%;clear:both;font-weight:bold;display:block;margin:0 0 5px 0;}
