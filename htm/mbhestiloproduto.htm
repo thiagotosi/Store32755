@@ -1,129 +1,94 @@
-<!-- Fastcommerce - EstiloProduto.htm : Grid v1 08.04.2016  (Ultra Light Store) -->
-
+<!-- Fastcommerce - mbhestiloproduto.htm : Mobile -->
 <ProdTop>
-<!-- Search Filters -->
-<div id="idDivPath">
-  <div id="idHeadFilters">
-    <div id="idTxtFilters">Filtros da busca:</div>
-    <div id="idShowFilters"><button onclick="ToggleIDs('idHideFilters','idShowFilters');document.getElementById('ProductsFilterFC').style.display='block';">Exibir</button></div>
-    <div id="idHideFilters" style="display:none;"><button onclick="ToggleIDs('idShowFilters','idHideFilters');document.getElementById('ProductsFilterFC').style.display='none';">Ocultar</button></div>
-  </div>
-</div>
-<style>#ProductsFilterFC{display:none;margin-bottom:35px;}</style>
-
-<div class="row">
-  <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6 text-left">
-      <div id="ProductsFilterFC" data-include-css="false"></div>
-    </div>
-  </div>
-</div>
-
-<!-- Script Filters -->
+<div style="display:none;"><ListPathCatQt><ListAdic1Qt><ListAdic2Qt><ListAdic3Qt></div>
+<div id="ProductsFilterStore"></div>
 <script>
-  iQtdProds=<QtProd>;
-
-  if(iQtdProds=="1"){
-    var sPages=sF$.fnGetID("idPageCountFC");
-    if(sPages)sPages.style.display="none";
-  }
-  OffsetAutoPagFC=290;
+function FuncProductsFilter(){
+  FCLib$.fnLoadScript("<PathTo file="htm/js/mbhproductsfilterstore.js">",false);
+}
 </script>
-
-<div id="idPagProdTop"></div>
 </ProdTop>
 
 <ProdLista>
-<!-- Prod Lista -->
-<FormProd>
-  <div class="DivListProd col-small-6 col-medium-6 col-large-6 col-mlarge-6 col-xlarge-6 text-center">
-    <div class="ListProductStyleProd">
-      <div class="DivListProductStyleImagemProd">
-        <div class="ImgCapaListProd DivListproductStyleImagemZoom"><ImagemProd></div>
-      </div>
-      <p class="ListProductStyleNomeProd"><a href="<URLProd>"><NomeProd></a></p>
-      <div class="DivListProductStylePrice">
-        <div class="DivListProductStylePriceProd" style="white-space:nowrap;">
-          <div id="idProdPrice<IDProduto>"><script>sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script></div> 
-          <div class="PriceAVistaLista"><script>sF$.fnShowParcels(<PrecoNum>,<MaxParcelasProdNum>);</script><br><script>sF$.fnMostraDescontoHome(<PrecoNum>);</script></div>
+<div class="amp-prod-list-container">
+
+  <div class="swiper-container-prodlist">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="amp-prod-list container">
+          <div class="amp-prod-list-img">
+            <div class="amp-prod-list-img"><ImagemProd></div>
+          </div>
+          <div class="amp-prod-list-info">
+            <a href="<URLProd>" class="amp-prod-list-link">
+              <span class="amp-prod-list-name"><NomeProd></span>
+              <div class="amp-prod-list-review">
+                <OpiniaoMedia>
+              </div>
+              <div class="amp-prod-list-price">
+                <PrecoFlex>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-      <div>
-        <script>if(<OpiniaoQtd>>0){document.write("<div class='RateProdHome'><table><tr><td><OpiniaoMedia></td><td></td></tr></table></div>");}else{document.write("<div class='RateProdHome'><table><tbody><tr><td><table cellspacing='0' cellpadding='0'><tbody><tr><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td></tr></tbody></table></td><td></td></tr></tbody></table></div>");}</script>      
+
+      <div class="swiper-slide">
+        <div class="amp-prod-list-descr">
+          <a href="<URLProd>">
+            <DescricaoCurta>
+          </a>
+          <a href="<URLProd>"><button class="amp-prod-home-btn">+ detalhes</button></a>
+        </div>
       </div>
+
     </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
   </div>
-</FormProd>
+
+</div>
 </ProdLista>
 
-
 <ProdDet>
+
 <!-- Prod Det -->
-<link href='<PathTo file="htm/css/fc_grid_v1.css">' rel="stylesheet">
+<link href='<PathTo file="htm/css/mbhfc_grid_v1.css">' rel="stylesheet">
 <link rel="stylesheet" href="/js/magictoolbox/magiczoomplusv1/magiczoomplus.css?cccfc=1" />
 
-<!-- Begin: Breadcrumb -->
-<div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6">
-  <div id="idBreadcrumb">
-    <ul>
-      <li><a href="/categorias.asp?idloja=<IDLoja>" class="ProductStyleBreadCrumblinkFC"><LegendaCat>:</a></li>
-      <li><PathCat></li>
-    </ul>
-  </div>
+<!-- Begin: Product Cat -->
+<div class="row prod-det-cat-tags">
+  <div class="prod-info DivDetCat"><LegendaCat>: <NomeCat></div>
 </div>
-<!-- End: Breadcrumb -->
-
-<!-- Begin: Release Button and Review -->
-<div class="row">
-  <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-right">
-      <div class="DivDetBtnRelease"><lancamento></div>
-      <div id="RateProd<IDProduto>" class='RateProdHome'></div>
-      <script>sF$.reviewProd(<IDProduto>,<OpiniaoQtd>,'<OpiniaoMedia>');</script>
-    </div>
-  </div>
-</div>
-<!-- End: Release Button and Review -->
-
-<!-- Begin: Product Name -->
-<div class="row">
-  <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
-      <h1 id="idNameProductGridFC"><NomeProd></h1>
-    </div>
-  </div>
-</div>
-<!-- End: Product Name -->
+<!-- End: Product Cat -->
 
 <!-- Begin: Product Image -->
 <div class="row">
   <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left" id="idDivGridImg">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-center" id="idDivGridImg">
       <a href="<ImagemProdAmp>" class="MagicZoomPlus" rel="hint:false;initialize-on: mouseover;"><img src="<ImagemProdDet>" alt="<NomeProd>" onError="MostraImgOnError(this,0)"></a>
     </div>
   </div>
 </div>
 <!-- End: Product Image -->
 
+
+<!-- Begin: Product Name -->
+<div class="row">
+  <h1 id="idNameProductGridFC" class="amp-prod-det-name"><NomeProd></h1>
+  <div id="RateProd<IDProduto>" class='RateProdHome'></div>
+  <script>sF$.reviewProd(<IDProduto>,<OpiniaoQtd>,'<OpiniaoMedia>');</script>
+</div>
+<!-- End: Product Name -->
+
 <!-- Begin: Product Ref -->
 <div class="row">
-  <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
-      <div class="DivDetRef"><span class="prod-info">Ref: <small id="idCodProdGrid"><CodProd></small></div>
-    </div>
-  </div>
+  <div class="DivDetRef"><span class="prod-info" id="idCodProdGrid"><CodProd></span></div>
+  <div class="DivDetBtnRelease"><lancamento></div>
 </div>
 <!-- End: Product Ref -->
 
-<!-- Begin: Product Cat -->
-<div class="row">
-  <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
-       <div class="prod-info DivDetCat">Categoria: <NomeCat></div>
-    </div>
-  </div>
-</div>
-<!-- End: Product Cat -->
 
 <!-- Begin: Product Price -->
 <div class="row">
@@ -139,6 +104,15 @@
 </div>
 <!-- End: Product Price -->
 
+<!-- Begin: Release Button and Review -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-right">
+    </div>
+  </div>
+</div>
+<!-- End: Release Button and Review -->
+
 <!-- Begin: Product Grid Content -->
 <div class="row">
   <div class="MainContainer">
@@ -149,15 +123,15 @@
 </div>
 <!-- End: Product Grid Content -->
 
-<!-- Begin: line -->
+<!-- Begin: Product Filters -->
 <div class="row">
   <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
-      <hr>
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
+      <ProdFilters>
     </div>
   </div>
 </div>
-<!-- End: line -->
+<!-- End: Product Filters -->
 
 <!-- Begin: Product ZipCode -->
 <div class="row">
@@ -169,33 +143,6 @@
 </div>
 <!-- End: Product ZipCode -->
 
-<!-- Begin: line -->
-<div class="row">
-  <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
-      <hr>
-    </div>
-  </div>
-</div>
-<!-- End: line -->
-
-<!-- Begin: Product Share -->
-<div class="row">
-  <div class="MainContainer">
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
-     <div class="SocialProdLinks">
-       <ul class="ProductStyleULFC ProductStyleSocialIcons" id="idShareProd">
-         <li style="white-space:nowrap;"><span><a href="javascript:MostraIndique(<IDLoja>,<IDProduto>)"><img src='<PathTo file="images/iconprodemail.svg">' class="EstImgShareProdMail" border="0" alt="E-mail" title="Recomende este produto"></a></span></li>
-         <li><span><ShareGooglePlus></span></li>
-         <li><span><ShareFacebook></span></li>
-         <li><span><ShareTwitter></span></li>
-         <li><span><SharePinterest></span></li>
-       </ul>
-     </div>
-    </div>
-  </div>
-</div>
-<!-- End: Product Share -->
 
 <div class="FullDoubleSpaceFC"></div>
 
@@ -231,7 +178,7 @@
 <div class="row">
   <div class="MainContainer">
       <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left descr-prod">
-        <div class="ProductStyleBoxDescriptionFC">
+        <div class="ProductStyleBoxDescriptionFC amp-prod-det-descr">
          <Descricao>
         </div>
         <div class="ProductStyleBoxDescriptionFC">
@@ -304,7 +251,7 @@ jQuery(".EstNameProdCross").addClass('text-overflow');
 
 <!-- Begin: JS scripts grid -->
 <script src="/js/magictoolbox/magiczoomplusv1/magiczoomplus.js?cccfc=1"></script>
-<script src='<PathTo file="htm/js/fc_grid_v1.js">'></script>
+<script src='<PathTo file="htm/js/mbhfc_grid_v1.js">'></script>
 
 <script>
 fnShowCEPGrid(<IDProduto>); /*FC simulação de frete */
@@ -340,20 +287,20 @@ FCGrid$.myOptions = {
   colorImg : false, 
   colorImgFormat : '.gif',
   stock: false,
-  btnSelectImg : 'botselecionegrid.svg', 
-  btnBuyImg : 'botcarrinho.svg',
-  btnContactUSImg : 'botconsultegrid.svg',
-  btnSoldOut : 'botcarrinhoesgotado.svg', 
+  btnSelectImg : 'ampbotselecionegrid.svg', 
+  btnBuyImg : 'ampbotcarrinho.svg',
+  btnContactUSImg : 'ampbotconsultegrid.svg',
+  btnSoldOut : 'ampbcarrinhoesgotado.svg', 
   textGrid : 'Selecione as opções abaixo',
   order : ['cor', 'adicional1', 'adicional2', 'adicional3', 'adicionalD1', 'adicionalD2', 'adicionalD3'],
   nameDescriptor : { 
     cor : 'Cor',
-    adicional1 : 'Descritor 1',
-    adicional2 : 'Descritor 2',
-    adicional3 : 'Descritor 3',
-    adicionalD1 : 'Descritor 4',
-    adicionalD2 : 'Descritor 5',
-    adicionalD3 : 'Descritor 6'
+    adicional1 : '<NomeAdicional1>',
+    adicional2 : '<NomeAdicional2>',
+    adicional3 : '<NomeAdicional3>',
+    adicionalD1 : '<NomeAdicionalD1>',
+    adicionalD2 : '<NomeAdicionalD2>',
+    adicionalD3 : '<NomeAdicionalD3>'
   },
   textDescriptor : {
     cor : 'Selecione',
@@ -368,15 +315,17 @@ FCGrid$.myOptions = {
 /* código opcional para alterar as configurações da grade:end */
 
 FCGrid$.init("idMainGridFC_<IDProduto>", aProductListGrid, aProductOnlyOneGrid); /* Inicia a grade */
-
 </script>
 <!-- End: JS scripts grid -->
 </ProdDet>
 
-<ProdAmp><!-- Prod Amp --></ProdAmp>
-<ProdBottom>
-<script>
-  try{document.getElementById("idFoundFC").style.padding='0px 0px 15px 10px';}catch(e){}
-  try{document.getElementById("idPageCountFC").style.padding='0px 0px 15px 0px';}catch(e){}
-</script>
-</ProdBottom>
+<prodbottom>
+  <script>
+    setTimeout(function(){
+      carousel.swipers.listagem();
+    },1000);
+    function FuncAutoPagEnd(){
+      carousel.swipers.listagem();
+    }
+  </script>
+</prodbottom>
