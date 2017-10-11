@@ -174,12 +174,12 @@ var sF$=(function(){
           aImgsShare[i].src=FC$.PathImg +'iconprodfacebook.svg?cccfc=1';
         }
         else if(aImgsShare[i].className=='EstImgShareTwitter'){
-          aImgsShare[i].setAttribute('data-src',FC$.PathImg +'iconprodtwitter.svg?cccfc=1');
-          aImgsShare[i].src=FC$.PathImg+ 'iconprodtwitter.svg?cccfc=1';
+          aImgsShare[i].setAttribute('data-src',FC$.PathImg +'twitter.svg?cccfc=1');
+          aImgsShare[i].src=FC$.PathImg+ 'twitter.svg?cccfc=1';
         }
         else if(aImgsShare[i].className=='EstImgShareGooglePlus'){
-          aImgsShare[i].setAttribute('data-src',FC$.PathImg +'iconprodgoogleplus.svg?cccfc=1');
-          aImgsShare[i].src=FC$.PathImg+ 'iconprodgoogleplus.svg?cccfc=1';
+          aImgsShare[i].setAttribute('data-src',FC$.PathImg +'gplus.svg?cccfc=1');
+          aImgsShare[i].src=FC$.PathImg+ 'gplus.svg?cccfc=1';
         }
         else if(aImgsShare[i].className=='EstImgSharePinterest'){
           aImgsShare[i].setAttribute('data-src',FC$.PathImg +'iconprodpinterest.svg?cccfc=1');
@@ -307,7 +307,7 @@ var sF$=(function(){
   function fnMostraDescontoHome(PrecoProd){
     if(PrecoProd==0 || iDescontoAvista==0)return;
     document.write("<p class=PriceAVistaProdLista>à vista <b>"+FormatPrice(PrecoProd*((100-iDescontoAvista)/100),FC$.Currency)+"</b></p>");
-  }  
+  }
 
   function fnMostraDescontoProdLista(PrecoProd){
     if(PrecoProd==0 || iDescontoAvista==0)return;
@@ -325,7 +325,7 @@ var sF$=(function(){
     if(ReviewQtd>0){
       innerReview.innerHTML = "<table><tr><td>"+ReviewMedia+"</td><td></td></tr></table>";}else{innerReview.innerHTML="<table><tbody><tr><td><table cellspacing='0' cellpadding='0'><tbody><tr><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td></tr></tbody></table></td><td></td></tr></tbody></table>";
     }
-  }  
+  }
 
   return{
     sCurrentPage:sCurrentPage,
@@ -389,14 +389,14 @@ function ShowCartOnPage(IDLoja,iErr,sMsg,sCartText,sCheckoutText,este){
      sHTML+="<tr onclick=window.location.href='/addproduto.asp?idloja="+ IDLoja +"'><td id=idTDTitShowCartOnPageFC colspan=2 align=center style='background-color:#"+ sBackColor +";color:#ffffff;border-width:1px;border-color:#3b6e22;font-weight:bold;font-size:12px;cursor:pointer'><div style='padding:5px; line-height:"+ iLH +"px;'>"+ sMsg +"</div></td></tr>";
      if(iErr==0){
        sHTML+="<tr height=45>";
-       sHTML+="<td valign=top align=center style=cursor:pointer onclick=window.location.href='/addproduto.asp?idloja="+ IDLoja +"'><a href='addproduto.asp?idloja="+ IDLoja +"' style='color:#444444;text-decoration:none;font-size:14px;font-weight:bold;'>Ir para o carrinho</a></td>";
-       sHTML+="<td align=left><img src='"+ FC$.PathImg +"iconclose.svg?cccfc=1' width=20 height=20 hspace=5 style='cursor:pointer;margin-top:10px' onclick=oDivShowCartOnPage.style.visibility='hidden'></td>";
+       sHTML+="<td valign=middle align=center style=cursor:pointer onclick=window.location.href='/addproduto.asp?idloja="+ IDLoja +"'><a href='addproduto.asp?idloja="+ IDLoja +"' style='color:#444444;text-decoration:none;font-size:14px;font-weight:bold;'>Ir para o carrinho</a></td>";
+       sHTML+="<td align=left><img src='"+ FC$.PathImg +"ampiconclose.svg?cccfc=1' width=20 height=20 hspace=5 style='cursor:pointer;margin-top:10px' onclick=oDivShowCartOnPage.style.visibility='hidden'></td>";
        sHTML+="</tr>";
        sF$.fnUpdateCart(true,false);
      }
      else{
        sHTML+="<tr height=25>";
-       sHTML+="<td colspan=2 align=center><img src='"+ FC$.PathImg +"iconclose.svg?cccfc=1' width=20 height=20 hspace=5 style='cursor:pointer;margin:10px;' onclick=oDivShowCartOnPage.style.visibility='hidden'></td>";
+       sHTML+="<td colspan=2 align=center><img src='"+ FC$.PathImg +"ampiconclose.svg?cccfc=1' width=20 height=20 hspace=5 style='cursor:pointer;margin:10px;' onclick=oDivShowCartOnPage.style.visibility='hidden'></td>";
        sHTML+="</tr>";
      }
      sHTML+="</table>";
@@ -405,7 +405,7 @@ function ShowCartOnPage(IDLoja,iErr,sMsg,sCartText,sCheckoutText,este){
   oDivShowCartOnPage.innerHTML=sHTML;
   oDivShowCartOnPage.style.visibility="visible";
   iLastCartOnPage++;
-  setTimeout("if(iLastCartOnPage=="+ iLastCartOnPage +")oDivShowCartOnPage.style.visibility='hidden';",4000);
+  setTimeout("if(iLastCartOnPage=="+ iLastCartOnPage +")oDivShowCartOnPage.style.visibility='hidden';",400000);
 }
 
 // Funções executadas no rodapé
@@ -548,16 +548,16 @@ function fnShowCEPGrid(IDProd){
     var sNumCEP=fnGetCookie('CEP'+FC$.IDLoja);
     if(sNumCEP==null)sNumCEP="";
     var sCEP="<div id='idDivCEPFC'>";
-    sCEP+="  <div id='idDivTitCEP'><img src='"+ FC$.PathImg +"iconziptruck.svg?cccfc=1' width='25' height='25' alt='Zip box' /><span>Simule o valor do frete</span></div>";
+    sCEP+="  <div id='idDivTitCEP'><img src='"+ FC$.PathImg +"ampiconziptruck.svg?cccfc=1' width='25' height='25' alt='Zip box' /><span>Simule o valor do frete</span></div>";
     sCEP+="  <div id='idDivContentCEP'>";
     sCEP+="    <div id='idDivContentFieldsCEP'>";
     sCEP+="      <div id='idDivCEPCalc'>";
     sCEP+="        <div class='FieldCEP FieldCEPQty'><label>Qtd.</label><input type='number' id='idQtdZip"+ IDProd +"' value='1' maxlength='4'></div>";
     sCEP+="        <div class='FieldCEP FieldCEPNum'><input type='text' placeholder='CEP' id='idZip"+ IDProd +"' value='"+ sNumCEP +"' maxlength='8' onkeyup='this.value=this.value.replace(/[^\\d]+/g,\"\");if(this.value.length >= 8)document.getElementById(\"idCEPButton\").click()'></div>";
-    sCEP+="        <img src='"+ FC$.PathImg +"iconnewsletter.svg?cccfc=1' height='29px' id='idCEPButton' class='FieldCEPBtn' onclick='fnGetShippingValuesProdGrid("+ IDProd +")'>";
+    sCEP+="        <img src='"+ FC$.PathImg +"ampiconnewsletter.svg?cccfc=1' height='29px' id='idCEPButton' class='FieldCEPBtn' onclick='fnGetShippingValuesProdGrid("+ IDProd +")'>";
     sCEP+="      </div>";
     sCEP+="    </div>";
-    sCEP+="    <div id='idDivImgLoadingCEPFC'><img src='"+ FC$.PathImg +"loadingcep.gif?cccfc=1' vspace=3 style='display:none;' id=ImgLoadingCEP></div>";
+    sCEP+="    <div id='idDivImgLoadingCEPFC'><img src='"+ FC$.PathImg +"mbbloadingcep.gif?cccfc=1' vspace=3 style='display:none;' id=ImgLoadingCEP></div>";
     sCEP+="    <div id='idShippingValues"+ IDProd +"'></div></div>";
     sCEP+="  </div>";
     sCEP+="</div>";
@@ -684,3 +684,131 @@ function fnProgressBarLoading(){
     NProgress.done();
   });
 }
+
+function fnInsertLinkWhatsApp(){
+  var sURLCanonical="";
+  var oLinkWhatsApp=document.getElementById("idLinkWhatsApp"); 
+  if(oLinkWhatsApp){
+    var oCanonicalURL=document.querySelector("link[rel='canonical']");
+    if(oCanonicalURL)sURLCanonical=oCanonicalURL.href
+    oLinkWhatsApp.href="whatsapp://send?text=Veja '"+ document.title +"'. Segue o link: "+ sURLCanonical;
+  }
+}
+
+var plugins  = function(d){
+  'use strict';
+
+  /* Sidebar */
+  var btnShow = d.querySelector(".amp-sidebar-btn"),
+      btnClose = d.querySelector(".amp-sidebar-btn-close"),
+      divSidebar = d.querySelector(".sidebar-container"),
+      mask = d.querySelector(".sidebar-mask");      
+
+
+  var events = {
+    show: function(){
+      if (typeof d.querySelector(".sidebar-close") != undefined)divSidebar.classList.remove("sidebar-close");
+      divSidebar.classList.add("sidebar-open");
+      mask.style.display="block";
+    },
+    close: function(){
+      divSidebar.classList.remove("sidebar-open");
+      divSidebar.classList.add("sidebar-close");
+      mask.style.display="none";
+    }
+  };
+
+    btnShow.addEventListener('click',events.show,false);
+    btnClose.addEventListener('click',events.close,false);
+    mask.addEventListener('click',events.close,false);  
+
+  /*Accordion*/
+  var elemAccordion = d.querySelectorAll("[accordion]");
+  for(var i=0;i<elemAccordion.length;i++){
+    var contentAccordion = d.querySelector("[accordion-content]");
+    var action = {
+      show: function(){
+        contentAccordion.classList.toggle("expanded");
+      }
+    }
+    elemAccordion[i].addEventListener('click',action.show,false);
+  }
+};
+
+var carousel = function(){
+
+  var swipers = {
+    home: function(){
+    var swiper = new Swiper('.swiper-container', {
+        paginationClickable: true,
+        slidesPerView: 2,
+        spaceBetween: 15,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        centeredSlides: true,
+        loop:true,
+        preventClicks:true,
+        preventClicksPropagation:true,
+        breakpoints: {
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 15
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 15
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 15
+            },
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 10
+            }
+        }
+    });
+    carousel.swipers.removeLazyLoad();
+  },
+
+  listagem: function(){
+    var swiperlist  = new Swiper('.swiper-container-prodlist', {
+        paginationClickable: true,
+        slidesPerView: 1,
+        spaceBetween: 15,
+        nextButton: '.swiper-button-next',
+        loop:false,
+        preventClicks:true,
+        preventClicksPropagation:true,
+        breakpoints: {
+            1024: {
+                slidesPerView: 1
+            },
+            768: {
+                slidesPerView: 1
+            },
+            640: {
+                slidesPerView: 1
+            },
+            320: {
+                slidesPerView: 1
+            }
+        }
+    });
+    carousel.swipers.removeLazyLoad();
+  },
+  
+  removeLazyLoad: function(){
+    var allElemImg = document.querySelectorAll(".amp-prod-home-img a img");
+    for(var i=0; i< allElemImg.length; i++){
+      var oImg = allElemImg[i].getAttribute("data-src");
+      if(oImg != null){ allElemImg[i].src= oImg;}
+    }
+  }
+}
+
+  return {
+    "swipers":swipers
+  }
+
+}();
