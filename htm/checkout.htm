@@ -18,5 +18,16 @@ function FuncChkRegisterEnd(){
     document.getElementById('idChkTagsCol2FC').style.position='relative';
     document.getElementById('idChkExtCartFC').style.position='relative';
   }
+
+  //ORDER CONFIRMATION
+  if(F$.Step==2){
+    jQuery('#idTitCartFC').css({'background':'none', 'color' : '#4d4d4d', 'text-transform': 'inherit', 'padding-left': '0px'});
+  }
+}
+
+function FuncChkRegisterBegin(){
+  if(F$.Step==1 && (F$.FreightValue=='' || F$.FreightValue==null)){
+    F$.GetID("idChkPaymentFC").innerHTML="<div id=idChkPaymentIntFC class=EstChkDiv><div id=idTitPaymentFC class=EstTitCheckoutFC>Pagamento</div><p>As op&ccedil;&otilde;es de pagamento ser&atilde;o exibidas ap&oacute;s a etapa da escolha do frete.</p></div>";
+  }
 }
 </script>
