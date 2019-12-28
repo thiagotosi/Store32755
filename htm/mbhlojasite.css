@@ -3,6 +3,7 @@ html{font-size: 16px;}
 body{font-family: "Helvetica Neue",Helvetica,Arial,Roboto,sans-serif;background-color:#f0eeec;margin:0;}
 header{background-color: #e5e5e5;max-width: 600px; margin:0 auto; padding-bottom: 10px;}
 footer,section{max-width: 600px; margin:0 auto;background-color: <tag-FCCSSColor8>;}
+#idTitTextoFC{font-size:1.5rem;font-weight:700;}
 
 *{box-sizing: border-box;}
 
@@ -265,3 +266,8 @@ footer .amp-nav > a:nth-of-type(1){
 .amp-nav a:visited{
   color:#0a0c7b;
 }
+
+/* Checkout */
+#FCCartButtons ul{display:flex;display:-webkit-flex;flex-direction:column;-webkit-flex-direction:column;}
+#FCCartButtons ul li:first-child{order:1;}
+#FCCartButtons ul li:nth-child(2){order:2;}
