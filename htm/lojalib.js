@@ -25,7 +25,7 @@ var sF$=(function(){
 
   //Função para mostrar valor economizado em produtos em promoção
   function fnShowEconomy(ProdPrice,ProdPriceOri){
-    if(ProdPrice!=ProdPriceOri)document.write("<span class=FCfnShowEconomy>Economize <b>"+FormatPrice(ProdPriceOri-ProdPrice,FC$.Currency)+"</b> ("+fnFormatNumber(((ProdPriceOri-ProdPrice)/ProdPriceOri)*100)+"%)</span>");
+    if(ProdPrice!=ProdPriceOri)document.write("<span class=FCfnShowEconomy>Economize até <b>"+FormatPrice(ProdPriceOri-ProdPrice,FC$.Currency)+"</b> ("+fnFormatNumber(((ProdPriceOri-ProdPrice)/ProdPriceOri)*100)+"%)</span>");
   }
   
   function fnFormatNumber(num){
@@ -98,7 +98,52 @@ var sF$=(function(){
     if(idPrice)idPrice.innerHTML=sPrice;
 
   }
+  
+  //Novo Preço novopreco
+  function fnShowNewPrice(Price,OriginalPrice,Cod,PrecoVista,iMaxParcels,ProductID){
+    iPL++;
+    //console.log(ProductID+ " iPL="+ iPL +" Price="+Price +" OriginalPrice="+ OriginalPrice +" Cod="+ Cod);
+    var idPrice=fnGetID("idProdPrice"+ProductID);
+    var sPrice="";
+    if(Price==0 && OriginalPrice==0){
+      if(idPrice)idPrice.innerHTML="<div class=\"prices\"><br><div class=price><div class=currency><a href='/faleconosco.asp?idloja="+FC$.IDLoja+"&assunto=Consulta%20sobre%20produto%20(Código%20"+Cod+")' target='_top' >Consulte-nos</a></div></div></div>";
+      return void(0);
+    }
+    var iPrice=PrecoVista.toString().split(".");
+    if(iPrice.length==2){
+      var iPriceInt=iPrice[0];
+      var PriceDecimal=iPrice[1];
+      if(PriceDecimal.length==1)PriceDecimal+="0";
+    }
+    else{
+      var iPriceInt=iPrice;
+      var PriceDecimal="00";
+    }    
 
+    var sInterest;
+
+    if(typeof Juros!="undefined"){
+      if(iMaxParcels==0||iMaxParcels>Juros.length)iMaxParcels=Juros.length;
+      if(Juros[iMaxParcels-1]>0)sInterest=""; else sInterest=" sem juros";
+    }
+    else{
+      iMaxParcels=0;
+    }
+	sPrice+="<div class=\"prices\">";
+    if(Price!=OriginalPrice){
+      sPrice+="  <div class=\"old-price line-through\">De&nbsp; <span>"+FormatPrice(OriginalPrice,FC$.Currency)+"</span><span class=\"por\">&nbsp;Por</span></div>";
+    }
+    else{
+      //sPrice+="  <div class=\"old-price\"><span>&nbsp;</span><div class=\"por\">Por</div></div>";
+      sPrice+="  <div class=\"old-price\"><span></span><span class=\"por\">Por</span></div>";
+    }
+    sPrice+="  <div class=\"price\"><span class=\"currency\"><strong>"+FC$.Currency+" </span><span class=\"int\">"+ fnFormatNumber(iPriceInt) +"</span><span class=\"dec\">,"+ PriceDecimal +"</span></strong></div>";
+    sPrice+="  <div class=\"EstParc\">(no boleto ou depósito bancário)</div>";
+    sPrice+="  <div class=\"old-price\">ou&nbsp; <span>"+FormatPrice(Price,FC$.Currency)+"</span> em até 3x sem juros no cartão de crédito</div>";
+    if(iMaxParcels>1)sPrice+="  <div class=\"installments\"><strong><span class=\"installment-count\">"+ iMaxParcels +"</span>x</strong> de <strong><span class=\"installment-price\">"+FormatPrice(CalculaParcelaJurosCompostos(Price,iMaxParcels),FC$.Currency)+"</span></strong>"+ sInterest +"</div>";
+    sPrice+="</div>";
+    if(idPrice)idPrice.innerHTML=sPrice;
+  }
   function fnShowParcels(Price,iMaxParcels,ProductID){
     var idParcelsProd=fnGetID("idProdParcels"+ProductID);
     var sPrice="";
@@ -371,7 +416,7 @@ var sF$=(function(){
       $('.HomeProd-SlideResponsive').slick({
         dots: false,
         infinite: true,
-        speed: 300,
+        speed: 5,
         slidesToShow: 4,
         slidesToScroll: 1,
         variableWidth: true,
@@ -423,6 +468,32 @@ var sF$=(function(){
     }
   }
   
+  // Video Filter
+  function fnShowVideo(IDProduto,oProdFilters,sImagemProdPri,sURLProd,sNomeProd){
+    var sVideo="";
+    if(oProdFilters.length>0){
+      var iFiltroVideo=oProdFilters[0].pFilNames["video"];
+      if(iFiltroVideo!=undefined)sVideo=oProdFilters[0].pFil[iFiltroVideo].value;
+    }
+    fnVideoImage(IDProduto,sVideo,sImagemProdPri,sURLProd,sNomeProd);
+  }
+  
+  // Video and Image Product
+  function fnVideoImage(IDProduto,videoProduct,ImagemProdPri,sURLProd,NomeProd){
+    var replaceNomeProd = NomeProd.replace(/-/g,' ');
+    if (videoProduct==""){
+      document.getElementById("id-video-image"+IDProduto).innerHTML="<div class='ImgCapaListProd DivListproductStyleImagemZoom'><a href='"+ sURLProd +"' class='ImgCapaProd'><img src="+ ImagemProdPri +" alt=\""+ replaceNomeProd +"\" onerror='MostraImgOnError(this,0)'></a></div>";
+    }else{
+     document.getElementById("id-video-image"+IDProduto).innerHTML="<video id=prodVideo"+ IDProduto +" class='videoProd' preload=auto loop src='https://my.mixtape.moe/"+ videoProduct +".mp4'></video>";
+     function execVideoEvents(){
+      var oVideo=document.getElementById("prodVideo"+IDProduto);
+      if(FCLib$.isOnScreen(oVideo))oVideo.play();
+     }
+     execVideoEvents();
+     FCLib$.AddEvent(document,"scroll",execVideoEvents);
+    }
+  }  
+  
   return{
     sCurrentPage:sCurrentPage,
     fnGetID:fnGetID,
@@ -430,6 +501,7 @@ var sF$=(function(){
     fnPreloadImages:fnPreloadImages,
     fnShowEconomy:fnShowEconomy,
     fnLogout:fnLogout,
+    fnShowNewPrice:fnShowNewPrice,
     fnShowPrice:fnShowPrice,
     fnShowParcels:fnShowParcels,
     fnShowButtonCart:fnShowButtonCart,
@@ -453,7 +525,8 @@ var sF$=(function(){
     fnCreateEventGA:fnCreateEventGA,
     fnHideShowBannersHome:fnHideShowBannersHome,
     fnHomeCarousel:fnHomeCarousel,
-    fnLinkDisp:fnLinkDisp
+    fnLinkDisp:fnLinkDisp,
+    fnShowVideo:fnShowVideo
   }
 
 })();
@@ -487,10 +560,10 @@ function ShowCartOnPage(IDLoja,iErr,sMsg,sCartText,sCheckoutText,este){
   }
   if(iErr==0){var sBackColor="3187e6";var iLH=45} else {var sBackColor="949494";var iLH=25}
   var sHTML="<table id=idTabShowCartOnPageFC width='"+iW +"' height='"+ iH +"' cellpadding=3 cellspacing=3>";
-     sHTML+="<tr onclick=window.location.href='/addproduto.asp?idloja="+ IDLoja +"'><td id=idTDTitShowCartOnPageFC colspan=2 align=center style='background-color:#"+ sBackColor +";color:#ffffff;border-width:1px;border-color:#3b6e22;font-weight:bold;font-size:12px;cursor:pointer'><div style='padding:5px; line-height:"+ iLH +"px;'>"+ sMsg +"</div></td></tr>";
+     sHTML+="<tr onclick=top.location.href='/addproduto.asp?idloja="+ IDLoja +"'><td id=idTDTitShowCartOnPageFC colspan=2 align=center style='background-color:#"+ sBackColor +";color:#ffffff;border-width:1px;border-color:#3b6e22;font-weight:bold;font-size:12px;cursor:pointer'><div style='padding:5px; line-height:"+ iLH +"px;'>"+ sMsg +"</div></td></tr>";
      if(iErr==0){
        sHTML+="<tr height=45>";
-       sHTML+="<td valign=top align=center style=cursor:pointer onclick=window.location.href='/addproduto.asp?idloja="+ IDLoja +"'><a href='/addproduto.asp?idloja="+ IDLoja +"' style='color:#444444;text-decoration:none;font-size:14px;font-weight:bold;'>Ir para o carrinho</a></td>";
+       sHTML+="<td valign=top align=center style=cursor:pointer onclick=top.location.href='/addproduto.asp?idloja="+ IDLoja +"'><a href='/addproduto.asp?idloja="+ IDLoja +"' style='color:#444444;text-decoration:none;font-size:14px;font-weight:bold;'>Ir para o carrinho</a></td>";
        sHTML+="<td align=left><img src='"+ FC$.PathImg +"IconClose.svg?cccfc=1' width=20 height=20 hspace=5 style='cursor:pointer;margin-top:10px' onclick=oDivShowCartOnPage.style.visibility='hidden'></td>";
        sHTML+="</tr>";
        sF$.fnUpdateCart(true,false);
@@ -805,88 +878,126 @@ function fnLoginShowUserName(user){
   sF$.fnLoginUserName(user.fullName,user.pictureURL);
 }
 
-// Don't Go Popup
-FCLib$.onReady(function(){
-  if(FCLib$.GetID("overlay")){
-    //Dynamic Don't Go Container
-    var dynamicDontGoContainer = document.createElement('div');
-    dynamicDontGoContainer.id = 'ShowDontGoPopup';
-    dynamicDontGoContainer.className = 'DontGoPopup';
-    document.getElementsByTagName('body')[0].appendChild(dynamicDontGoContainer);
-  
-    //Dynamic Don't Go Container Elements
-    var dynamicDontGoContainerElements = document.createElement('div');
-    dynamicDontGoContainerElements.className = 'DontGoPopupContent';
-    dynamicDontGoContainer.appendChild(dynamicDontGoContainerElements);
-  
-    //Dynamic Don't Go Elements Close Button
-    var dynamicDontGoElementsCloseButton = document.createElement('div');
-    dynamicDontGoElementsCloseButton.className = 'DontGoPopupCloseButton';
-    dynamicDontGoContainerElements.appendChild(dynamicDontGoElementsCloseButton);
-    dynamicDontGoElementsCloseButton.innerHTML = "<img id='idBtnDontGoClose' border='0' onclick='sF$.fnCreateEventGA(\"DontGo\",\"Clique\",\"Close\");'>";
-  
-    //Dynamic Don't Go Elements Banner
-    var dynamicDontGoElementsBanner = document.createElement('div');
-    dynamicDontGoElementsBanner.className = 'DontGoBanner';
-    dynamicDontGoContainerElements.appendChild(dynamicDontGoElementsBanner);
-    dynamicDontGoElementsBanner.innerHTML = "<a id='idLinkDontGo' target='_self'><img id='idImgDontGo' src='' border='0' onclick='sF$.fnCreateEventGA(\"DontGo\",\"Clique\",\"Banner\");'></a>"; 
-  
-    //PreLoading Image Banner
-    var preLoadingDontGoBanner = new Image();
-    preLoadingDontGoBanner.onload = function () {
-      document.getElementById('idImgDontGo').src = preLoadingDontGoBanner.src;
-    };
-    preLoadingDontGoBanner.src = FC$.PathImg +"bannerpopupdontgo.jpg?cccfc=1";
-  
-    //Show Don't Go Popup
-    FCLib$.fnDontGo(userDontGo,{
-    DontGoBtnClose:FC$.PathImg +"botdontgoclose.svg?cccfc=1", //Close button
-    DontGoBanner:FC$.PathImg +"bannerpopupdontgo.jpg?cccfc=1", //Banner
-    DontGoLink:"/prod,idloja,"+FC$.IDLoja+",promocao,1,ofertas.htm", //Link
-    DontGoAltParam:"UM DESCONTO ESPECIAL PARA VOCÊ!"}, //Alt Param
-    "DontGoCookie"); //Cookie name
-  }
-});
-
-function userDontGo(oParam){
-  var OpenDontGoPopup=document.getElementById('ShowDontGoPopup');
-  if(OpenDontGoPopup){
-    document.getElementById("idBtnDontGoClose").src=oParam.DontGoBtnClose; //Close button
-    document.getElementById("idImgDontGo").src=oParam.DontGoBanner; //Banner
-    document.getElementById("idImgDontGo").alt=oParam.DontGoAltParam; //Alt Param
-    document.getElementById("idLinkDontGo").href=oParam.DontGoLink; //Link
-    sF$.fnCreateEventGA("DontGo","Open","Window");
-    window.onload=OpenDontGoPopup.style.display="block";
-    var CloseDontGoPopup=document.getElementsByClassName("DontGoPopupCloseButton")[0];
-    CloseDontGoPopup.onclick=function(){OpenDontGoPopup.style.display="none";}
-  }
-}
-
-function fnDontGoActions() {
-  var oDontGo = document.getElementById('ShowDontGoPopup');
-  if (oDontGo) {
-    window.addEventListener("keydown", (function (e) {
-      if (oDontGo && e.keyCode == 27) {
-        oDontGo.style.display = "none";
-      }
-    }), false);
-    oDontGo.addEventListener("click", (function (e) {
-      e.stopPropagation();
-      if (e.target.id != 'DontGoPopupContent' && e.target.id == 'ShowDontGoPopup') {
-        oDontGo.style.display = "none";
-      }
-    }), false);
-  }else{
-    return;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', fnDontGoActions, false);
-
 
 function fnProgressBarLoading(){
   NProgress.start();
   window.addEventListener("load",function(event){
     NProgress.done();
   });
+}
+
+// Product Stock
+function fnGetStockProduct(sStockProduct){
+var productStock=document.getElementById("product-details-show-stock");
+if(sStockProduct==0){productStock.innerHTML=""}
+else if(sStockProduct<=3){
+productStock.innerHTML="<span>Apenas <span class='product-details-show-stock-lastoff'>"+ sStockProduct +"</span> em estoque!</span><br><div class='product-details-progress-bar product-details-color1 product-details-stripes'><span class='product-details-stripes-size'></span></div>"
+}
+else if(sStockProduct<=5){
+productStock.innerHTML="<span>Apenas <span class='product-details-show-stock-lastoff'>"+ sStockProduct +"</span> em estoque!</span><br><div class='product-details-progress-bar2 product-details-color2 product-details-stripes2'><span class='product-details-stripes-size2'></span></div>"
+}
+else if(sStockProduct>=6){productStock.innerHTML=""}
+else{productStock.innerHTML=""}
+}
+// Show Date Prom
+function fnGetDate(sDateTime,IsMMDD){
+var IsDate=false;
+var oDate=null;
+var aDateTime=sDateTime.split(' ');
+if(aDateTime.length<=2){
+var oMatchesDate=/^(\d{1,2})[-\/](\d{1,2})[-\/](\d{2,4})$/.exec(aDateTime[0]);
+if(oMatchesDate!=null){
+if(IsMMDD){
+var m=parseInt(oMatchesDate[1]-1,10);
+var d=parseInt(oMatchesDate[2],10);
+}
+else{
+var d=parseInt(oMatchesDate[1],10);
+var m=parseInt(oMatchesDate[2]-1,10);
+}
+var y=parseInt(oMatchesDate[3],10);
+if(y<30)y+=2000;
+else if(y<100)y+=1900;
+if(aDateTime.length==2){
+var oMatchesTime=/^(\d{1,2})[:](\d{1,2})$/.exec(aDateTime[1]);
+if(oMatchesTime!=null){
+var hh=parseInt(oMatchesTime[1],10);
+var mm=parseInt(oMatchesTime[2],10);
+var oNewDate=new Date(y,m,d,hh,mm);
+IsDate=(oNewDate.getMinutes()==mm && oNewDate.getHours()==hh && oNewDate.getDate()==d && oNewDate.getMonth()==m && oNewDate.getFullYear()==y);
+}
+}
+else{
+var oNewDate=new Date(y,m,d,2);
+IsDate=(oNewDate.getDate()==d && oNewDate.getMonth()==m && oNewDate.getFullYear()==y);
+}
+if(IsDate)oDate=oNewDate;
+}
+}
+return {IsDate:IsDate, oDate:oDate};
+}
+function fnFormatN(n){
+n=""+n;
+if(n.length==1)n="0"+n;
+return n;
+}
+function fnShowDateProm(sDateTime){
+var oOut=document.getElementById("DataProm");
+if(oOut){
+var IsMMDD=false;
+var oGetDate=fnGetDate(sDateTime,IsMMDD);
+if(oGetDate.IsDate){
+setInterval(function() {
+var dDataPromFim=oGetDate.oDate;
+var dAgora=new Date();
+var dFaltam=(dDataPromFim-dAgora); //retorna em milissegundos
+var iHoras=new Date(dFaltam+10800000).getHours(); //horas > diferença de 3 horas (+10800000)
+var iMinutos=new Date(dFaltam+10800000).getMinutes(); //minutos > diferença de 3 horas (+10800000)
+var iSeconds=new Date(dFaltam+10800000).getSeconds(); //segundos > diferença de 3 horas (+10800000)
+dFaltam=parseInt(dFaltam/1000/60/60/24); //quantos dias restam para acabar a promoção
+if(dDataPromFim>dAgora && dFaltam<10){ //só exibe informação quando faltarem 10 dias para acabar a promoção
+var sCont="<div class='product-details-data-prom-date-container'>Promoção válida até <b class='product-details-data-prom-date'>"+ fnFormatN(dDataPromFim.getDate()) +"/"+ fnFormatN(1+dDataPromFim.getMonth()) +"/"+ dDataPromFim.getFullYear() +" às "+ fnFormatN(dDataPromFim.getHours()) +":"+ fnFormatN(dDataPromFim.getMinutes()) +".</b></div><div class='product-details-lats-hours'>Faltam</div>";
+if(dFaltam<1){
+sCont+="<div class='product-details-data-prom-container'>";
+if(iHoras>=2){
+sCont+="<div class='product-details-data-prom-time'><div class='product-details-data-prom-time-title'>"+ iHoras +"</div><div class='product-details-data-prom-time-txt'>hora"+ (iHoras>=1?"s</div></div>":"");
+}else if(iHoras==1){
+sCont+="<div class='product-details-data-prom-time'><div class='product-details-data-prom-time-title'>"+ iHoras +"</div><div class='product-details-data-prom-time-txt'>hora"+ (iHoras>=1?"</div></div>":"");
+}
+if(iMinutos>0)sCont+="<div class='product-details-data-prom-time'><div class='product-details-data-prom-time-title'>"+iMinutos+"</div><div class='product-details-data-prom-time-txt'>min"+(iMinutos>=1?"</div></div>":"");
+if(iSeconds>0)sCont+="<div class='product-details-data-prom-time'><div class='product-details-data-prom-time-title'>"+iSeconds+"</div><div class='product-details-data-prom-time-txt'>seg"+(iSeconds>=1?"</div></div>":"");
+sCont+="</div>";}
+else if(dFaltam==1){
+sCont+="<div class='product-details-data-prom-container'><div class='product-details-data-prom-time'><div class='product-details-data-prom-time-title'>"+ dFaltam +"</div><div class='product-details-data-prom-time-txt'>dia</div></div>";
+if(iHoras>=2){
+sCont+="<div class='product-details-data-prom-time'><div class='product-details-data-prom-time-title'>"+ iHoras +"</div><div class='product-details-data-prom-time-txt'>hora"+ (iHoras>=1?"s</div></div>":"");
+}else if(iHoras==1){
+sCont+="<div class='product-details-data-prom-time'><div class='product-details-data-prom-time-title'>"+ iHoras +"</div><div class='product-details-data-prom-time-txt'>hora"+ (iHoras>=1?"</div></div>":"");
+}
+if(iMinutos>0)sCont+="<div class='product-details-data-prom-time'><div class='product-details-data-prom-time-title'>"+iMinutos+"</div><div class='product-details-data-prom-time-txt'>min"+(iMinutos>=1?"</div></div>":"");
+if(iSeconds>0)sCont+="<div class='product-details-data-prom-time'><div class='product-details-data-prom-time-title'>"+iSeconds+"</div><div class='product-details-data-prom-time-txt'>seg"+(iSeconds>=1?"</div></div>":"");
+sCont+="</div>";
+}
+else if(dFaltam>1){sCont+="<div class='product-details-data-prom-time'><div class='product-details-data-prom-time-title'>"+ dFaltam +"</div><div class='product-details-data-prom-time-txt'>dias</div></div>";}
+oOut.innerHTML=sCont;
+//oOut.style.background="#f3f3f3";
+//oOut.style.padding="10px";
+//oOut.style.borderRadius="10px";
+}
+},1000);
+}
+}
+}
+
+//Selo Destaque	
+function fnShowBadgeProd(IDProduto,PrecoOri,PrecoNum){
+var oBadge=document.getElementById("DivProd"+IDProduto);
+if(oBadge){
+var sBadges="";
+if(oBadge.hasAttribute("data-sale") && PrecoOri>PrecoNum && (getPromocao() > 1))sBadges+="<div class='badgeProm' title='Oferta'>-"+ getPromocao() +"%</div>";
+if(oBadge.hasAttribute("data-release"))sBadges+="<div class='badgeNew' title='Lançamento'>NOVO</div>";
+if(oBadge.hasAttribute("data-highlight"))sBadges+="<div class='badgeHigh' title='Destaque'>&#9733;&#9733;&#9733;</div>";
+if(sBadges!="")oBadge.innerHTML+="<div class='badgesProd'>"+ sBadges +"</div>";
+}
+function getPromocao(){return parseInt((PrecoOri-PrecoNum)/PrecoOri*100);}
 }

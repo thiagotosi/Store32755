@@ -1,4 +1,4 @@
-<!-- Fastcommerce - BuyTogether.htm : v1 08.04.2016  (Ultra Light Store) -->
+<!-- Fastcommerce - BuyTogether.htm : v1 08.04.2016  (Store 3) -->
 <script src='<PathTo file="htm/js/buytogether.js">'></script>
 <link rel="stylesheet" href="<BaseLoja>htm/css/buytogether.css">
 <script>
@@ -10,7 +10,7 @@ bT$.setVarProds({id:<IDProduto>,qt:1,qty:<Estoque>,Adicional1:"<Adicional1Val>",
     <TextoBuyTogether>
   </p>
   <div class="bTItem bTActualItem" id="bTItem<IDProduto>">
-    <div class="bTImgProd"><img src="<ImagemProdPri>" onerror="MostraImgOnError(this,FC$.Language);"></div>
+    <div class="bTImgProd"><img src="<ImagemProdPri>" onerror="MostraImgOnError(this,FC$.Language);" alt="<NomeProd>"></div>
     <div class="bTProdName">
       <NomeProd>
     </div>
@@ -52,8 +52,7 @@ bT$.setVarProds({id:<IDProduto>,qt:1,qty:<Estoque>,Adicional1:"<Adicional1Val>",
           <input type="checkbox" id="CB<IDProdutoConj>" checked onchange="bT$.fnRemoveItemCJ(<IDProdutoConj>,this)">
           <label for="CB<IDProdutoConj>">Comprar junto</label>
         </div> 
-      </div>	
-<script>bT$.setVarProds({id:<IDProdutoConj>,qt:1,qty:<EstoqueConj>,Adicional1:"<Adicional1Conj>",Adicional2:"<Adicional2Conj>",Adicional3:"<Adicional3Conj>",AdicionalD1:"<AdicionalD1Conj>",AdicionalD2:"<AdicionalD2Conj>",AdicionalD3:"<AdicionalD3Conj>",Cor:"<CorConj>",PrecoNum:<PrecoNumConj>,PrecoOri:<PrecoOriConj>});</script>
+      </div> <script>bT$.setVarProds({id:<IDProdutoConj>,qt:1,qty:<EstoqueConj>,Adicional1:"<Adicional1Conj>",Adicional2:"<Adicional2Conj>",Adicional3:"<Adicional3Conj>",AdicionalD1:"<AdicionalD1Conj>",AdicionalD2:"<AdicionalD2Conj>",AdicionalD3:"<AdicionalD3Conj>",Cor:"<CorConj>",PrecoNum:<PrecoNumConj>,PrecoOri:<PrecoOriConj>});</script>
     </prod>
   </div>
   <div class="bTTotalsPrices">

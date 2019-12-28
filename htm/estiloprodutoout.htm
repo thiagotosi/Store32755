@@ -1,29 +1,45 @@
-<p255>
-<div>
-  <div class="HomeProd">
-    <div class="DivHomeImagemProd">
-      <a id="various3" class="button line-blue" data-rel="lightcase:myCollection" rel="nofollow" href="/listaprodutos.asp?idloja=<IDLoja>&sty=9&int=1&idproduto=<IDProduto>">
-        <div class="DivHomeSpy">
-          <img src="<PathTo file="images/iconfastpreviewspy.svg">" alt="FastPreview" width="30" height="30">
-          ESPIAR
-        </div>
-      </a>
-      <div class="DivHomeImagemZoom"><a href="<URLProd>" class="ImgCapaProd"><ImagemProd></a></div>
-    </div>
-    <p class="HomeNomeProd"><NomeProd></p>
-    <div class="DivHomePrice">
-      <div class="DivHomePriceProd" style="white-space:nowrap;">
-        <div id="idProdPrice<IDProduto>"><script>sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script></div> 
-        <div class="PriceAVistaLista"><script>sF$.fnShowParcels(<PrecoNum>,<MaxParcelasProdNum>);</script><br><script>sF$.fnMostraDescontoHome(<PrecoNum>);</script></div>
-      </div>
-    </div>
-    <div>
-      <a href="<URLProd>">
-        <div class="DivHomeDet">+ MAIS DETALHES</div>  
-        <div id="RateProd<IDProduto>" class='RateProdHome'></div>
-        <script>sF$.reviewProd(<IDProduto>,<OpiniaoQtd>,'<OpiniaoMedia>');</script>
-      </a>
-    </div>
+<p254>
+<div class="DivHomeProd" onclick="NoCascate('<URLProd>');" id="DivProd<IDProduto>" <DataAttribute>>
+  <div class="DivHomeImagemProd" id="DivImagemProdDouble<IDProduto>"></div>
+  <div class="DivHome-fastview font-bold" onclick='bCascate=true;FCLib$.OpenRWD("<url-prod-id><IDProduto>&sty=9&int=1","Disp","width=700,height=700")'>
+<a href="<URLProd>" rel="nofollow" onclick="insertURLPreview();">ESPIAR</a></div>
+  <div class="DivHomeNomeProd">
+    <span class="HomeNomeProd font-regular"><NomeProd></span>
+  </div>
+  <div class="DivHomePriceProd" style="white-space:nowrap;">
+    <div id="idProdPrice<IDProduto>"></div> 
+    <!--div class="PriceAVistaLista" id="ProdDesc<IDProduto>"></div-->
   </div>
 </div>
+<script src="<PathTo file="htm/lojalib.js">"></script>
+<script>
+FCLib$.onReady(function(){
+  sF$.fnChangeImages("<ImagemProdPri>","<ImagemProdDet>","<URLProd>","<IDProduto>","<NomeProdUA>");
+  sF$.fnShowNewProd(<PrecoNum>,<PrecoOri>,'<CodProd>','<PrecoAvistaNum>',<MaxParcelasProdNum>,<IDProduto>);
+});
+</script>
+<script>fnShowBadgeProd(<IDProduto>,<PrecoOri>,<PrecoNum>);</script>
+  
+
+</p254>
+
+<p255>
+<div class="DivHomeProd" onclick="NoCascate('<URLProd>');" id="DivProd<IDProduto>" <DataAttribute>>
+  <div class="DivHomeImagemProd" id="DivImagemProdDouble<IDProduto>"></div>
+  <div class="DivHome-fastview font-bold" onclick='bCascate=true;FCLib$.OpenRWD("<url-prod-id><IDProduto>&sty=9&int=1","Disp","width=700,height=700")'>
+<a href="<URLProd>" rel="nofollow" onclick="insertURLPreview();">ESPIAR</a></div>
+  <div class="DivHomeNomeProd">
+    <span class="HomeNomeProd font-regular"><NomeProd></span>
+  </div>
+  <div class="DivHomePriceProd" style="white-space:nowrap;">
+    <div id="idProdPrice<IDProduto>"></div> 
+    <!--div class="PriceAVistaLista" id="ProdDesc<IDProduto>"></div-->
+  </div>
+</div>
+<script>
+FCLib$.onReady(function(){
+  sF$.fnChangeImages("<ImagemProdPri>","<ImagemProdDet>","<URLProd>","<IDProduto>","<NomeProdUA>");
+  sF$.fnShowNewProd(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);
+});
+</script>
 </p255>
