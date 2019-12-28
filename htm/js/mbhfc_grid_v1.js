@@ -1,4 +1,5 @@
-//FastCommerce Grid [08.07.2015] v1
+// Fastcommerce Grid [26.01.2018] v1
+
 var FCGrid$ = function () {
   "use strict";
   var product = {}, myOptions = {}, aProductList, aProductOnlyOne;
@@ -604,6 +605,38 @@ var FCGrid$ = function () {
     }
   }
 
+  function fnSelectForWishlist(oPos){
+    if(oPos && FC$.Wishlist==1){
+      var oBtnWL=document.createElement("div");
+      oBtnWL.setAttribute("class","ProdWLSel");
+      oBtnWL.innerHTML="Selecione as opções acima para inserir na lista de desejos.";
+      oPos.appendChild(oBtnWL);
+    }
+  }
+
+  function fnAddToWishlist(oPos,idp){
+    if(FC$.Wishlist==1){
+      var oBtnWL=document.createElement("div");
+      oBtnWL.setAttribute("id","ProdWL"+ idp);
+      oBtnWL.setAttribute("class","ProdWL");
+      oPos.appendChild(oBtnWL);
+      WL$.fnButtonAddToWishlist(idp);
+      var el=document.querySelectorAll('.ProdWLSel');
+      if(el.length>0){
+        for(var i=0; i< el.length;i++){el[i].parentNode.removeChild(el[i]);} //remove texto informando para selecionar opções
+      }
+    }
+  }
+
+  function fnResetWishlist(){
+    if(FC$.Wishlist==1){
+      var el=document.querySelectorAll('.ProdWL');
+      if(el.length>0){
+        for(var i=0; i< el.length;i++){el[i].parentNode.removeChild(el[i]);} //remove os botões já existem no html de wishlist
+      }
+    }
+  }
+
   function fnExistsProduct(IDProduto, descritores, descrAnterior, aProductList){
     var sParms="";
     for(var i=0; i< aProductList.length; i++){
@@ -628,6 +661,7 @@ var FCGrid$ = function () {
 
     var oPositionBtn = document.getElementById('idButtonBuyFC');
     oPositionBtn.appendChild(oButton);
+    fnAddToWishlist(oPositionBtn,product.IDProduto);
 
     //exibe o resumo do produto, descritores e atributos
     var oPositionDetail = document.getElementById('idDetailProduct');
@@ -658,7 +692,7 @@ var FCGrid$ = function () {
       if(elSelect.length===0){
         var oButton=fn.availableBuyProduct(null);
         var oPositionBtn = document.getElementById('idButtonBuyFC');
-        if(oPositionBtn)oPositionBtn.appendChild(oButton);
+        if(oPositionBtn){oPositionBtn.appendChild(oButton);fnResetWishlist();}
       }
     }
 
@@ -928,6 +962,7 @@ var FCGrid$ = function () {
       var oButton=fn.availableBuyProduct(null);
       var oPositionBtn = document.getElementById('idButtonBuyFC');
       if(oPositionBtn)oPositionBtn.appendChild(oButton);
+      fnSelectForWishlist(oPositionBtn);
       fn.getShippingView(false) // simulação de frete
     }
   }
@@ -992,6 +1027,7 @@ var FCGrid$ = function () {
     }
     oPositionBtn = document.getElementById('idButtonBuyFC');
     oPositionBtn.appendChild(oButton);
+    fnAddToWishlist(oPositionBtn,oProd.IDProduto);
   }
   //fnInitProductOnlyOne:end
 
@@ -1042,4 +1078,4 @@ var FCGrid$ = function () {
     fnExecTabDescriptors:fnExecTabDescriptors
   }
 }();
-//FastCommerce Grid [08.07.2015] v1
+// Fastcommerce Grid [26.01.2018] v1
